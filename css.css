@@ -1,0 +1,65 @@
+/* header */
+h1,h2,h3 {
+    text-align: center;
+}
+
+table {
+    background-color: #FCC87F;
+    margin: auto;
+    width: 90%;
+    border-radius: 7.5px;
+}
+
+thead {
+    background-color: #E29A81;
+    color: #FFFEED;
+}
+
+tbody {
+    text-align: left;
+}
+
+a:link{
+    text-decoration: none;
+    color: #F85B61
+}
+
+a:visited{
+    color: #F85B61
+}
+
+a:hover{
+    color: #FFB750
+}
+
+body{
+    background-color: #E1E5DF;
+}
+
+/* block code */
+.code {
+    background-color: #FCEFD3;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: scroll;
+}
+
+/* line code */
+.lcode {
+    background-color: #FCEFD3;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/* article */
+.article {
+    border: solid green;
+    background-color: powderblue;
+    margin: auto;
+    padding: 5px;
+    width: 80%;
+}

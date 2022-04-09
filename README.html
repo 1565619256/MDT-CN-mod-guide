@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <title>README</title>
+</head>
+<body>
+    <div>
+        .\README>
+    </div>
+    <div class="article">
+        <h1>MDT模组制作帮助文档</h1>
+        <h2 style="text-align: right">----作者: <a href="https://space.bilibili.com/472147718">NullPointerErr</a></h2>
+        <p>教程版本: alpha1.1</p>
+        <p>最新版本: <a href="https://github.com/Anuken/Mindustry/releases/tag/v135.2">135.2</a></p>
+        <p style="color: red;">注意: 在阅读本教程前默认你已能掌握json/js等编程语言</p>
+        <h2>特殊属性json写法(WIP)</h2>
+        <h2><a href="./js/jstr.html">高阶模组(WIP)</a></h2>
+        <h2><a href="./attr/attr.html">所有属性(WIP)</a></h2>
+
+
+        <h2>制作基础(WIP)</h2>
+        <h3>文档目录</h3>
+        <!-- 文档目录 -->
+        <div class="code"><pre>
+project
+├── mod.json
+├── content
+│   ├── items
+│   ├── blocks
+│   ├── liquids
+│   └── units
+├── maps
+├── bundles
+├── sounds
+├── schematics
+├── scripts
+├── sprites-override
+└── sprites</pre></div>
+
+        <!-- 解释说明 -->
+        <ul>
+            <li><code class="lcode">mod.json/mod.hjson</code >模组<b style="color: red">必须</b>要有的文件</li>
+            <li><code class="lcode">content/*</code>存放json模组的文件夹, 里面有更详细的分类</li>
+                <ul>
+                    <li><code class="lcode">items</code>存放物品的文件夹, 内部可根据需求再分类</li>
+                    <li><code class="lcode">blocks</code>存放方块, 可根据需求再分类</li>
+                    <li><code class="lcode">liquids</code>存放液体, 可据需再分类</li>
+                    <li><code class="lcode">units</code>存放单位, 可再分类</li>
+                </ul>
+            <li><code class="lcode">maps</code>存放模组地图的文件夹</li>
+            <li><code class="lcode">bundles</code>存放模组翻译的文件夹</li>
+            <li><code class="lcode">sounds</code>存放模组音效的文件夹</li>
+            <li><code class="lcode">scripts</code>存放js模组的文件夹</li>
+            <li><code class="lcode">sprites</code>存放模组图片的文件夹</li>
+            <li><code class="lcode">sprites-override</code>覆盖原先游戏图片的文件夹</li>
+        </ul>
+
+        <p>所有你模组的文件名<b style="color: red">不应有</b>空格<code class="lcode"> </code>或大写字母
+        <br>应该用<code class="lcode">-</code>代替空格<code class="lcode"> </code>并且全小写(中文是允许的)来命名文件以便后续引用</p>
+        <h3><code class="lcode">mod.json</code></h3>
+        <code class="lcode">mod.json</code>是一个模组的头文件, 是<b style="color: red">最重要</b>的文件
+        <!-- mod.json配置文件说明 -->
+        <table>
+            <thead>
+                <tr><th>name</th><th>type</th><th>default</th><th>note</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>name</td><td>String</td><td></td><td>模组名称</td></tr>
+                <tr><td>displayName</td><td>String</td><td></td><td>模组在游戏内显示名称</td></tr>
+                <tr><td>description</td><td>String</td><td></td><td>模组的描述</td></tr>
+                <tr><td>minGameVersion</td><td>String</td><td></td><td>模组所需最小游戏版本,应要高于<code class="lcode">105</code></td></tr>
+                <tr><td>version</td><td>String</td><td></td><td>模组版本</td></tr>
+                <tr><td>author</td><td>String</td><td></td><td>作者名称</td></tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
