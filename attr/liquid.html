@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../icon/liquid-cryofluid.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css.css">
+    <title>Liquid</title>
+</head>
+<body>
+    <div>
+        .\<a href="../README.html">README</a>>\<a href="./attr.html">attr.main</a>\Liquid>
+    </div>
+    <div class="article">
+        <h1>Liquid</h1>
+        <p>extends UnlockableContent</p>
+        <h2>主要属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>color</td><td>Color</td><td>#000000</td><td>液体颜色</td></tr>
+                <tr><td>barColor</td><td>Color<td>#000000</td><td>状态栏显示颜色</td></tr>
+                <tr><td>lightColor</td><td>Color</td><td></td><td>灯光颜色(Alpha透明度通道在这里亮光可见度)</td></tr>
+                <tr><td>flammability</td><td>float</td><td></td><td>可燃性, 影响是否为冷却液条件(<code class="lcode">flammability &lt; 0.1</code>)之一</td></tr>
+                <tr><td>temperature</td><td>float</td><td>0.50</td><td>温度, 影响是否为冷却液条件(<code class="lcode">temperature &lt; 0.5</code>)之一</td></tr>
+                <tr><td>heatCapacity</td><td>float</td><td>0.50</td><td>对可能需要冷却的方块的提升冷却效率</td></tr>
+                <tr><td>viscosity</td><td>float</td><td>0.5</td><td>液体流速, 越大越慢</td></tr>
+                <tr><td>explosiveness</td><td>float</td><td></td><td>爆炸性, 也和 屏幕抖动/受到的伤害 有关</td></tr>
+                <tr><td>effect</td><td>StatusEffect</td><td>StatusEffects.none</td><td>单位触碰时获得的效果</td></tr>
+            </tbody>
+        </table>
+
+        <h2>菜单显示</h2>
+        <div class="code"><pre>
+@Override
+public void setStats(){
+    stats.addPercent(Stat.explosiveness, explosiveness);
+    stats.addPercent(Stat.flammability, flammability);
+    stats.addPercent(Stat.temperature, temperature);
+    stats.addPercent(Stat.heatCapacity, heatCapacity);
+    stats.addPercent(Stat.viscosity, viscosity);
+}</pre></div>
+    </div>
+</body>
+</html>

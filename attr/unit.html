@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../icon/oct.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css.css">
+    <title>Unit</title>
+</head>
+<body>
+    <div>
+        .\<a href="../README.html">README</a>\<a href="./attr.html">attr.main</a>\Unit>
+    </div>
+    <div class="article">
+        <h1>Unit</h1>
+        <p>extends UnlockableContent</p>
+        <h2>主要属性</h2>
+        <table>
+            <thead>
+                <tr><th>field</th><th>type</th><th>default</th><th>note</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>flying</td><td>boolean</td><td>false</td><td>是否能飞行</td></tr>
+                <tr><td>onTitleScreen</td><td>boolean</td><td>true</td><td>如果<code class="lcode">flying</code>为<code class="lcode">true</code>和该值为<code class="lcode">true</code>则可出现在游戏主界面上</td></tr>
+                <tr><td>constructor</td><td>Prov&lt;? extends Unit&gt;</td><td></td><td>创建一个单位实例</td></tr>
+                <tr><td>defaultController</td><td>Prov&lt;? extends UnitController&gt;</td><td>见note</td><td>若<code class="lcode">flying == true</code>默认为飞行AI<br>反之则为陆地AI</td></tr>
+                <tr><td>speed</td><td>float</td><td>1.10</td><td>单位移速</td></tr>
+                <tr><td>boostMultiplier</td><td>float</td><td>1.0</td><td>若<code class="lcode">canBoost == true</code><br>则<code class="lcode">boostMultiplier * speed</code>为助推<b style="color: red">时</b>的速度</td></tr>
+                <tr><td>canBoost</td><td>boolean</td><td>false</td><td>能否助推, 助推<b style="color: red">时</b>为空军</td></tr>
+                <tr><td>rotateSpeed</td><td>float</td><td>5.0</td><td>单位躯干以上速度</td></tr>
+                <tr><td>baseRotateSpeed</td><td>float</td><td>5.0</td><td>单位躯干以下旋转速度</td></tr>
+                <tr><td>drag</td><td>float</td><td>0.30</td><td>不知道, 实验结果是越大越慢</td></tr>
+                <tr><td>accel</td><td>float</td><td>0.50</td><td>加速度?</td></tr>
+                <tr><td>rippleScale</td><td>float</td><td>1.0</td><td></td></tr>
+                <tr><td>riseSpeed</td><td>float</td><td>0.080</td><td>空军单位上升速度</td></tr>
+                <tr><td>fallSpeed</td><td>float</td><td>0.018</td><td>空军单位下降速度</td></tr>
+                <tr><td>health</td><td>float</td><td>200.0</td><td>单位生命值</td></tr>
+                <tr><td>range</td><td>float</td><td>-1</td><td></td></tr>
+                <tr><td>miningRange</td><td>float</td><td>70.0</td><td>挖矿距离(貌似5为一格)</td></tr>
+                <tr><td>armor</td><td>float</td><td>0.0</td><td>单位护甲值</td></tr>
+                <tr><td>maxRange</td><td>float</td><td>-1.0</td><td>AI监测最大距离<br>(如爬虫 <img src="../img/crawler.png" alt="crawler" width="30px" height="30px"> 在最大检测范围往最近的敌人奔去)</td></tr>
+                <tr><td>crashDamageMultiplier</td><td>float</td><td>1.0</td><td><b style="color: red">空军单位</b>坠毁后伤害倍率</td></tr>
+                <tr><td>targetAir</td><td>boolean</td><td>true</td><td>瞄准空军</td></tr>
+                <tr><td>targetGround</td><td>boolean</td><td>true</td><td>瞄准陆军</td></tr>
+                <tr><td>faceTarget</td><td>boolean</td><td>true</td><td>面向目标(可以为敌人或移动终点)</td></tr>
+                <tr><td>rotateShooting</td><td>boolean</td><td>true</td><td>边转边射击</td></tr>
+                <tr><td>isCounted</td><td>boolean</td><td>true</td><td></td></tr>
+                <tr><td>lowAltitude</td><td>boolean</td><td>false</td><td>低空飞行, 与图层有关</td></tr>
+                <tr><td>circleTarget</td><td>boolean</td><td>false</td><td>空军在敌人上方盘旋</td></tr>
+                <tr><td>destructibleWreck</td><td>boolean</td><td>true</td><td></td></tr>
+                <tr><td>groundLayer</td><td>float</td><td>Layer.groundUnit</td><td>类似图层, 高于其他时显示在上方<br>(范围: -11~320)</td></tr>
+                <tr><td>payloadCapacity</td><td>float</td><td>8</td><td>单位最大荷载</td></tr>
+                <tr><td>aimDst</td><td>float</td><td>-1.0</td><td></td></tr>
+                <tr><td>buildBeamOffset</td><td>float</td><td>3.80</td><td></td></tr>
+                <tr><td>commandLimit</td><td>int</td><td>8</td><td>单位操控上限</td></tr>
+                <tr><td>commandRadius</td><td>float</td><td>150.0</td><td>控制波范围</td></tr>
+                <tr><td>visualElevation</td><td>float</td><td>-1.0</td><td>影子有关</td></tr>
+                <tr><td>allowLegStep</td><td>boolean</td><td>false</td><td></td></tr>
+                <tr><td>hovering</td><td>boolean</td><td>false</td><td>单位是否不会被地形淹没和获得地面效果</td></tr>
+                <tr><td>omniMovement</td><td>boolean</td><td>true</td><td>修改后基本不受玩家控制了(能附身)</td></tr>
+                <tr><td>showHeal</td><td>boolean</td><td>true</td><td>被治愈时是否显色</td></tr>
+                <tr><td>healColor</td><td>boolean</td><td>Pal.heal</td><td><b style="color: red">被</b>治愈时的颜色</td></tr>
+                <tr><td>fallEffect</td><td>Effect</td><td>Fx.fallSmoke</td><td></td></tr>
+                <tr><td>fallThrusterEffect</td><td>Effect</td><td>Fx.fallSmoke</td><td></td></tr>
+                <tr><td>deathExplosionEffect</td><td>Effect</td><td>Fx.dynamicExplosion</td><td></td></tr>
+                <tr><td>decals</td><td>Seq&lt;UnitDecal&gt;</td><td>new Seq&lt;&gt;</td><td></td></tr>
+                <tr><td>abilities</td><td>Seq&lt;Ability&gt;</td><td>new Seq&lt;&gt;</td><td>单位的特殊能力</td></tr>
+                <tr><td>targetFlag</td><td>BlockFlag</td><td>{null}</td><td></td></tr>
+                <tr><td>playerTargetFlags</td><td>BlockFlag[]</td><td>{BlockFlag.core, null}</td><td></td></tr>
+                <tr><td>mineItems</td><td>Seq&lt;Item&gt;</td><td>Seq.with(Items.copper,<br>Items.lead,<br>Items.titanium,<br>Items.thorium)</td><td>决定AI挖的矿</td></tr>
+                <tr><td>outlines</td><td>boolean</td><td>true</td><td>绘制外框</td></tr>
+                <tr><td>outlineColor</td><td>Color</td><td>Pal.darkerMetal</td><td>外框颜色</td></tr>
+                <tr><td>outlineRadius</td><td>int</td><td>3</td><td>外框粗细</td></tr>
+                <tr><td>legCount</td><td>int</td><td>4</td><td>腿的个数</td></tr>
+                <tr><td>legGroupSize</td><td>int</td><td>2</td><td>貌似和移动间距有关</td></tr>
+                <tr><td>legLength</td><td>float</td><td>10.0</td><td>腿长</td></tr>
+                <tr><td>legSpeed</td><td>float</td><td>0.10</td><td>单位移动速度</td></tr>
+                <tr><td>legTrns</td><td>float</td><td>1.00</td><td>改动后奇怪起来了</td></tr>
+                <tr><td>legBaseOffset</td><td>float</td><td>0.0</td><td>和位置有关</td></tr>
+                <tr><td>legMoveSpace</td><td>float</td><td>1.0</td><td>和移动间距有关</td></tr>
+                <tr><td>legExtension</td><td>float</td><td>0</td><td></td></tr>
+                <tr><td>legPairOffset</td><td>float</td><td>0</td><td></td></tr>
+                <tr><td>legLengthScl</td><td>float</td><td>1.0</td><td></td></tr>
+                <tr><td>kinematicScl</td><td>float</td><td>1.0</td><td></td></tr>
+                <tr><td>maxStretch</td><td>float</td><td>1.750</td><td></td></tr>
+                <tr><td>legSplashDamage</td><td>float</td><td>0.0</td><td>落脚点造成伤害</td></tr>
+                <tr><td>legSplashRange</td><td>float</td><td>5</td><td>落脚点伤害范围</td></tr>
+                <tr><td>flipBackLegs</td><td>boolean</td><td>true</td><td></td></tr>
+                <tr><td>mechSideSway</td><td>float</td><td>0.540</td><td></td></tr>
+                <tr><td>mechFrontSway</td><td>float</td><td>0.10</td><td></td></tr>
+                <tr><td>mechStride</td><td>float</td><td>-1.0</td><td></td></tr>
+                <tr><td>mechStepShake</td><td>float</td><td>-1.0</td><td></td></tr>
+                <tr><td>mechStepParticles</td><td>boolean</td><td>false</td><td></td></tr>
+                <tr><td>mechLegColor</td><td>Color</td><td>Pal.darkMetal</td><td></td></tr>
+                <tr><td>itemCapacity</td><td>int</td><td>-1</td><td>单位物品容量</td></tr>
+                <tr><td>ammoCapacity</td><td>int</td><td>-1</td><td>单位弹药容量(单位弹药选项打开)</td></tr>
+                <tr><td>ammoType</td><td>AmmoType</td><td style="font-size: xx-small">new ItemAmmoType(Items.copper)</td><td>单位使用子弹(单位弹药选项打开)</td></tr>
+                <tr><td>mineTier</td><td>int</td><td>-1</td><td>钻头强度</td></tr>
+                <tr><td>mineSpeed</td><td>float</td><td>1.0</td><td>钻探速度</td></tr>
+                <tr><td>buildSpeed</td><td>float</td><td>-1.0</td><td>建造速度</td></tr>
+                <tr><td>mineSound</td><td>Sound</td><td>Sounds.minebeam</td><td>挖矿的声音</td></tr>
+                <tr><td>mineSoundVolume</td><td>float</td><td>0.60</td><td>挖矿声音大小</td></tr>
+                <tr><td>dpsEstimate</td><td>float</td><td>-1</td><td>预计秒伤(星球受到的伤害,用作敌人时?)</td></tr>
+                <tr><td>clipSize</td><td>float</td><td>-1</td><td></td></tr>
+                <tr><td>canDrown</td><td>boolean</td><td>true</td><td>能被淹没</td></tr>
+                <tr><td>naval</td><td>boolean</td><td>false</td><td>是否为海军</td></tr>
+                <tr><td>drownTimeMultiplier</td><td>float</td><td>1.0</td><td>淹没时间倍率?</td></tr>
+                <tr><td>engineOffset</td><td>float</td><td>5.0</td><td>尾部喷焰偏移(-y)</td></tr>
+                <tr><td>engineSize</td><td>float</td><td>2.50</td><td>尾部喷焰大小</td></tr>
+                <tr><td>engineColor</td><td>Color</td><td>null</td><td>尾部喷焰颜色(外)</td></tr>
+                <tr><td>engineColorInner</td><td>Color</td><td>Color.white</td><td>尾部喷焰颜色(内)</td></tr>
+                <tr><td>strafePenalty</td><td>float</td><td>0.50</td><td></td></tr>
+                <tr><td>hitSize</td><td>float</td><td>6.0</td><td></td></tr>
+                <tr><td>itemOffsetY</td><td>float</td><td>3.0</td><td>物品显示偏移(-y)</td></tr>
+                <tr><td>lightRadius</td><td>float</td><td>-1.0</td><td>灯光范围</td></tr>
+                <tr><td>lightOpacity</td><td>float</td><td>0.60</td><td>灯光外围亮度?</td></tr>
+                <tr><td>lightColor</td><td>Color</td><td>Pal.powerLight</td><td>灯光颜色</td></tr>
+                <tr><td>drawCell</td><td>boolean</td><td>true</td><td>绘制核心</td></tr>
+                <tr><td>drawItems</td><td>boolean</td><td>true</td><td>绘制携带物品</td></tr>
+                <tr><td>drawShields</td><td>boolean</td><td>true</td><td>绘制护盾</td></tr>
+                <tr><td>drawBody</td><td>boolean</td><td>true</td><td>绘制身体</td></tr>
+                <tr><td>trailLength</td><td>int</td><td>3</td><td></td></tr>
+                <tr><td>trailX</td><td>float</td><td>4.0</td><td></td></tr>
+                <tr><td>trailY</td><td>float</td><td>-3.0</td><td></td></tr>
+                <tr><td>trailScl</td><td>float</td><td>1.0</td><td></td></tr>
+                <tr><td>canHeal</td><td>boolean</td><td>false</td><td>能修复方块</td></tr>
+                <tr><td>singleTarget</td><td>boolean</td><td>false</td><td>全部武器瞄准一个目标</td></tr>
+                <tr><td>forceMultiTarget</td><td>boolean</td><td>false</td><td></td></tr>
+                <tr><td>deathSound</td><td>Sound</td><td>Sounds.bang</td><td>单位死亡音效</td></tr>
+                <tr><td>weapons</td><td>Seq&lt;Weapons&gt;</td><td>new Seq&lt;&gt;()</td><td>单位武器</td></tr>
+                <tr><td>buildTime</td><td>float</td><td>-1.0</td><td>单位额外被建造时间</td></tr>
+            </tbody>
+        </table>
+
+        <h2>菜单显示</h2>
+        <div class="code"><pre>
+@Override
+public void setStats(){
+    Unit inst = constructor.get();
+
+    stats.add(Stat.health, health);
+    stats.add(Stat.armor, armor);
+    stats.add(Stat.speed, speed * 60f / tilesize, StatUnit.tilesSecond);
+    stats.add(Stat.size, hitSize / tilesize, StatUnit.blocksSquared);
+    stats.add(Stat.itemCapacity, itemCapacity);
+    stats.add(Stat.range, (int)(maxRange / tilesize), StatUnit.blocks);
+    stats.add(Stat.commandLimit, commandLimit);
+
+    if(abilities.any()){
+        var unique = new ObjectSet<String>();
+
+        for(Ability a : abilities){
+            if(unique.add(a.localized())){
+                stats.add(Stat.abilities, a.localized());
+            }
+        }
+    }
+
+    stats.add(Stat.flying, flying);
+
+    if(!flying){
+        stats.add(Stat.canBoost, canBoost);
+    }
+
+    if(mineTier >= 1){
+        stats.addPercent(Stat.mineSpeed, mineSpeed);
+        stats.add(Stat.mineTier, StatValues.blocks(b -> b instanceof Floor f && f.itemDrop != null && f.itemDrop.hardness <= mineTier && (!f.playerUnmineable || Core.settings.getBool("doubletapmine"))));
+    }
+    if(buildSpeed > 0){
+        stats.addPercent(Stat.buildSpeed, buildSpeed);
+    }
+    if(inst instanceof Payloadc){
+        stats.add(Stat.payloadCapacity, (payloadCapacity / (tilesize * tilesize)), StatUnit.blocksSquared);
+    }
+
+    var reqs = getFirstRequirements();
+
+    if(reqs != null){
+        stats.add(Stat.buildCost, StatValues.items(reqs));
+    }
+
+    if(weapons.any()){
+        stats.add(Stat.weapons, StatValues.weapons(this, weapons));
+    }
+}</pre></div>
+    </div>
+</body>
+</html>

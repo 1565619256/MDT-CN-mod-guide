@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../icon/item-copper.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css.css">
+    <title>Item</title>
+</head>
+<body>
+    <div>
+        .\<a href="../README.html">README</a>>\<a href="./attr.html">attr.main</a>\Item>
+    </div>
+    <div class="article">
+        <h1>Item</h1>
+        <p>extends UnlockableContent</p>
+        <h2>主要属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>color</td><td>Color</td><td>#000000</td><td>在(反向)分类器 <img src="../img/sorter.png" alt="sorter"> <img src="../img/inverted-sorter.png" alt="inverted-sorter"> 和物品源 <img src="../img/item-source.png" alt="item-source"> 中的颜色</td></tr>
+                <tr><td>explosiveness</td><td>float</td><td>0.0</td><td>爆炸性, 也和 屏幕抖动/受到的伤害 有关</td></tr>
+                <tr><td>flammability</td><td>float</td><td>0.0</td><td>燃烧性, 也和 火焰生成/发电机功效 有关</td></tr>
+                <tr><td>radioactivity</td><td>float</td><td></td><td>辐射性, 只和 裂变发电机(如 rtg <img src="../img/rtg-generator.png" alt="rtg-generator" width="32px" height="32px">)有关<br><b style="color: red">不和</b>核能反应堆爆炸(如 钍反应堆 <img src="../img/thorium-reactor.png" alt="thorium-reactor" width="32px" height="32px">)威力有关</td></tr>
+                <tr><td>charge</td><td>float</td><td>0.0</td><td>放电性, 只和 储存其的方块爆炸后的创造闪电有关</td></tr>
+                <tr><td>hardness</td><td>int</td><td>0</td><td>钻探难度, 任何大于<code class="lcode">hardness</code>的钻头均可钻探</td></tr>
+                <tr><td>cost</td><td>float</td><td>1.0</td><td>方块建造耗时(<code class="lcode">全部物品耗时总和 * 方块的buildCostMultiplier</code>)</td></tr>
+                <tr><td>lowPriority</td><td>boolean</td><td></td><td>若为<code class="lcode">true</code>, 钻探优先级最低<br>(如沙子 <img src="../img/sand1.png" alt="sand1"> 和铅 <img src="../img/lead1.png" alt="lead1"> 在同一方块上 <img src="../img/sand-lead.png" alt="sand-lead"> , 优先采集铅 <img src="../img/lead1.png" alt="lead1"> )</td></tr>
+            </tbody>
+        </table>
+
+        <h2>菜单显示</h2>
+        <div class="code"><pre>
+@Override
+public void setStats(){
+    stats.addPercent(Stat.explosiveness, explosiveness);
+    stats.addPercent(Stat.flammability, flammability);
+    stats.addPercent(Stat.radioactivity, radioactivity);
+    stats.addPercent(Stat.charge, charge);        
+</pre></div>
+    </div>
+</body>
+</html>
