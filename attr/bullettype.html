@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css.css">
+    <title>BulletType</title>
+</head>
+<body>
+    <div>
+        .\<a href="../index.html">README</a>\<a href="./attr.html">attr.main</a>\<a href="./bullet.html">Bullet</a>\BulletType>
+    </div>
+    <div class="article">
+        <h1>BulletType</h1>
+        <p>extends Content</p>
+        <h2>全部属性</h2>
+        <table>
+            <thead><th><td>field</td><td>type</td><td>default</td><td>note</td></th></thead>
+            <tbody>
+                <tr><td>lifetiem</td><td>float</td><td>40.0</td><td>子弹存活时间</td></tr>
+                <tr><td>speed</td><td>float</td><td></td><td>子弹速度</td></tr>
+                <tr><td>damage</td><td>float</td><td></td><td>子弹伤害</td></tr>
+                <tr><td>hitSize</td><td>float</td><td>4.0</td><td></td></tr>
+                <tr><td>drawSize</td><td>float</td><td>40.0</td><td></td></tr>
+                <tr><td>drag</td><td>float</td><td>0.0</td><td></td></tr>
+                <tr><td>pierce</td><td>boolean</td><td>false</td><td>是否穿透</td></tr>
+                <tr><td>pierceBuilding</td><td>boolean</td><td>false</td><td>是否穿透建筑</td></tr>
+                <tr><td>pierceCap</td><td>int</td><td>-1</td><td>穿透层数</td></tr>
+                <tr><td>hitEffect</td><td>Effect</td><td></td><td></td></tr>
+                <tr><td>despawnEffect</td><td>Effect</td><td></td><td></td></tr>
+                <tr><td>shootEffect</td><td>Effect</td><td>Fx.shootSmall</td><td>子弹发射时特效</td></tr>
+                <tr><td>smokeEffect</td><td>Effect</td><td>Fx.shootSmallSmoke</td><td>子弹发射时额外烟雾特效</td></tr>
+                <tr><td>hitSound</td><td>Sound</td><td>Sounds.none</td><td>子弹移除时的声音</td></tr>
+                <tr><td>hitSoundPitch</td><td>float</td><td>1</td><td>击中某物声音音高(?</td></tr>
+                <tr><td>hitSoundVolume</td><td>float</td><td>1</td><td>击中某物声音响度</td></tr>
+                <tr><td>inaccuracy</td><td>float</td><td>0.0</td><td>额外的误差</td></tr>
+                <tr><td>ammoMultiplier</td><td>float</td><td>2.0</td><td>1弹药=n实体</td></tr>
+                <tr><td>relaodMultiplier</td><td>float</td><td>1.0</td><td>装填倍率</td></tr>
+                <tr><td>buildingDamageMultiplier</td><td>float</td><td>1.0</td><td>建筑伤害倍率</td></tr>
+                <tr><td>recoil</td><td>float</td><td></td><td>后坐力</td></tr>
+                <tr><td>killShooter</td><td>boolean</td><td>false</td><td>击杀子弹使用者</td></tr>
+                <tr><td>instantDisapper</td><td>boolean</td><td>false</td><td>瞬间消失</td></tr>
+                <tr><td>splashDamage</td><td>float</td><td>0.0</td><td>溅射伤害</td></tr>
+                <tr><td>knockback</td><td>float</td><td></td><td>击退强度</td></tr>
+                <tr><td>status</td><td>StatusEffect</td><td>StatusEffects.none</td><td>被击中单位获得效果</td></tr>
+                <tr><td>statusDuration</td><td>float</td><td>60.0 * 8</td><td>效果持续帧数</td></tr>
+                <tr><td>collidesTiles</td><td>boolean</td><td>true</td><td></td></tr>
+                <tr><td>collidesTeam</td><td>boolean</td><td>false</td><td>碰撞友方</td></tr>
+                <tr><td>collidesAir</td><td>boolean</td><td>true</td><td>碰撞空军</td></tr>
+                <tr><td>collidesGround</td><td>boolean</td><td>true</td><td>碰撞陆军</td></tr>
+                <tr><td>colldes</td><td>boolean</td><td>true</td><td></td></tr>
+                <tr><td>keepVelocity</td><td>boolean</td><td>true</td><td></td></tr>
+                <tr><td>scaleVelocity</td><td>boolean</td><td>true</td><td></td></tr>
+                <tr><td>hittable</td><td>boolean</td><td>true</td><td>是否被防御武器击中(如裂解光束<img src="../img/segment.png" alt="segment" height="32px" weight="32px">)</td></tr>
+                <tr><td>reflectable</td><td>boolean</td><td>true</td><td>是否能被反弹(如相位物墙<img src="../img/phase-wall.png" alt="phase-wall">)</td></tr>
+                <tr><td>absorbable</td><td>boolean</td><td>true</td><td></td></tr>
+                <tr><td>backMove</td><td>boolean</td><td>ture</td><td></td></tr>
+                <tr><td>maxRange</td><td>float</td><td>-1.0</td><td></td></tr>
+                <tr><td>healPercent</td><td>float</td><td>0.0</td><td>恢复友方生命百分比</td></tr>
+                <tr><td>makeFire</td><td>boolean</td><td>false</td><td>使用者预热</td></tr>
+                <tr><td>fragCone</td><td>float</td><td>360.0</td><td></td></tr>
+                <tr><td>fragAngle</td><td>float</td><td>0.0</td><td></td></tr>
+                <tr><td>fragBullet</td><td>int</td><td>9</td><td>破片数量</td></tr>
+                <tr><td>fragVelocityMin</td><td>float</td><td>0.20</td><td></td></tr>
+                <tr><td>fragVelocityMax</td><td>float</td><td>1.0</td><td></td></tr>
+                <tr><td>fragLifeMin</td><td>float</td><td>1.0</td><td></td></tr>
+                <tr><td>fragLifeMax</td><td>float</td><td>1.0</td><td></td></tr>
+                <tr><td>fragBullet</td><td>@Nullable<br>BulletType</td><td>null</td><td>破片子弹</td></tr>
+                <tr><td>hitColor</td><td>Color</td><td>Color.white</td><td></td></tr>
+                <tr><td>trailColor</td><td>Color</td><td style="font-size: xx-small;">Pal.missileYellowBack</td><td></td></tr>
+                <tr><td>trailChance</td><td>float</td><td>-0.0010</td><td></td></tr>
+                <tr><td>trailEffect</td><td>Effect</td><td>Fx.missileTrail</td><td></td></tr>
+                <tr><td>trailParam</td><td>float</td><td>2.0</td><td></td></tr>
+                <tr><td>splashDamageRadius</td><td>float</td><td>-1.0</td><td>溅射范围</td></tr>
+                <tr><td>incendAmount</td><td>int</td><td>0</td><td></td></tr>
+                <tr><td>incendSpread</td><td>float</td><td>8.0</td><td></td></tr>
+                <tr><td>incendChance</td><td>float</td><td>1.0</td><td></td></tr>
+                <tr><td>homingPower</td><td>float</td><td>0.0</td><td></td></tr>
+                <tr><td>homingRange</td><td>float</td><td>50.0</td><td></td></tr>
+                <tr><td>homingDelay</td><td>float</td><td>-1.0</td><td></td></tr>
+                <tr><td>lightningColor</td><td>Color</td><td>Pal.surge</td><td></td></tr>
+                <tr><td>lightning</td><td>int</td><td></td><td></td></tr>
+                <tr><td>lightningLength</td><td>int</td><td>5</td><td></td></tr>
+                <tr><td>lightningLengthRand</td><td>int</td><td>0</td><td></td></tr>
+                <tr><td>lightningDamage</td><td>float</td><td>-1</td><td></td></tr>
+                <tr><td>lightningCone</td><td>float</td><td>360.0</td><td></td></tr>
+                <tr><td>lightningAngle</td><td>float</td><td>0.0</td><td></td></tr>
+                <tr><td>lightningType</td><td>@Nullable<br>BulletType</td><td>null</td><td></td></tr>
+                <tr><td>weaveScale</td><td>float</td><td>1.0</td><td></td></tr>
+                <tr><td>weaveMag</td><td>float</td><td>-1.0</td><td></td></tr>
+                <tr><td>hitShake</td><td>float</td><td>0.0</td><td></td></tr>
+                <tr><td>despawnShake</td><td>float</td><td>0.0</td><td></td></tr>
+                <tr><td>puddles</td><td>int</td><td>0</td><td></td></tr>
+                <tr><td>puddleRange</td><td>float</td><td></td><td></td></tr>
+                <tr><td>puddleAmount</td><td>float</td><td>5.0</td><td></td></tr>
+                <tr><td>puddleLiquid</td><td>Liquid</td><td>Liquids.water</td><td></td></tr>
+                <tr><td>lightRadius</td><td>float</td><td>16.0</td><td>子弹发光范围</td></tr>
+                <tr><td>lightOpacity</td><td>float</td><td>0.30</td><td>发光亮度</td></tr>
+                <tr><td>lightColor</td><td>Color</td><td>Pal.powerLight</td><td>发光颜色</td></tr>
+            </tbody>
+            
+        </table>
+        <h2>构造方法</h2>
+        <div><pre>
+public BulletType(float speed, float damage){
+    this.speed = speed;
+    this.damage = damage;
+    hitEffect = Fx.hitBulletSmall;
+    despawnEffect = Fx.hitBulletSmall;
+}
+
+public BulletType(){
+    this(1f, 1f);
+}</pre></div>
+    </div>
+</body>
+</html>
