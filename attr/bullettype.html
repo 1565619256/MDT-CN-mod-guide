@@ -26,8 +26,8 @@
                 <tr><td>pierce</td><td>boolean</td><td>false</td><td>是否穿透</td></tr>
                 <tr><td>pierceBuilding</td><td>boolean</td><td>false</td><td>是否穿透建筑</td></tr>
                 <tr><td>pierceCap</td><td>int</td><td>-1</td><td>穿透层数</td></tr>
-                <tr><td>hitEffect</td><td>Effect</td><td></td><td></td></tr>
-                <tr><td>despawnEffect</td><td>Effect</td><td></td><td></td></tr>
+                <tr><td>hitEffect</td><td>Effect</td><td></td><td>击中效果</td></tr>
+                <tr><td>despawnEffect</td><td>Effect</td><td></td><td>被移除效果(?</td></tr>
                 <tr><td>shootEffect</td><td>Effect</td><td>Fx.shootSmall</td><td>子弹发射时特效</td></tr>
                 <tr><td>smokeEffect</td><td>Effect</td><td>Fx.shootSmallSmoke</td><td>子弹发射时额外烟雾特效</td></tr>
                 <tr><td>hitSound</td><td>Sound</td><td>Sounds.none</td><td>子弹移除时的声音</td></tr>
@@ -53,47 +53,47 @@
                 <tr><td>scaleVelocity</td><td>boolean</td><td>true</td><td></td></tr>
                 <tr><td>hittable</td><td>boolean</td><td>true</td><td>是否被防御武器击中(如裂解光束<img src="../img/segment.png" alt="segment" height="32px" weight="32px">)</td></tr>
                 <tr><td>reflectable</td><td>boolean</td><td>true</td><td>是否能被反弹(如相位物墙<img src="../img/phase-wall.png" alt="phase-wall">)</td></tr>
-                <tr><td>absorbable</td><td>boolean</td><td>true</td><td></td></tr>
+                <tr><td>absorbable</td><td>boolean</td><td>true</td><td>是否被力墙抵挡</td></tr>
                 <tr><td>backMove</td><td>boolean</td><td>ture</td><td></td></tr>
                 <tr><td>maxRange</td><td>float</td><td>-1.0</td><td></td></tr>
                 <tr><td>healPercent</td><td>float</td><td>0.0</td><td>恢复友方生命百分比</td></tr>
                 <tr><td>makeFire</td><td>boolean</td><td>false</td><td>使用者预热</td></tr>
                 <tr><td>fragCone</td><td>float</td><td>360.0</td><td></td></tr>
                 <tr><td>fragAngle</td><td>float</td><td>0.0</td><td></td></tr>
-                <tr><td>fragBullet</td><td>int</td><td>9</td><td>破片数量</td></tr>
-                <tr><td>fragVelocityMin</td><td>float</td><td>0.20</td><td></td></tr>
-                <tr><td>fragVelocityMax</td><td>float</td><td>1.0</td><td></td></tr>
-                <tr><td>fragLifeMin</td><td>float</td><td>1.0</td><td></td></tr>
-                <tr><td>fragLifeMax</td><td>float</td><td>1.0</td><td></td></tr>
-                <tr><td>fragBullet</td><td>@Nullable<br>BulletType</td><td>null</td><td>破片子弹</td></tr>
+                <tr><td>fragBullets</td><td>int</td><td>9</td><td>破片数量</td></tr>
+                <tr><td>fragVelocityMin</td><td>float</td><td>0.20</td><td>破片子弹速度下限</td></tr>
+                <tr><td>fragVelocityMax</td><td>float</td><td>1.0</td><td>破片子弹速度上限</td></tr>
+                <tr><td>fragLifeMin</td><td>float</td><td>1.0</td><td>破片子弹存活时间上限</td></tr>
+                <tr><td>fragLifeMax</td><td>float</td><td>1.0</td><td>破片子弹存活时间下限</td></tr>
+                <tr><td>fragBullet</td><td>@Nullable<br>BulletType</td><td>null</td><td>破片的子弹</td></tr>
                 <tr><td>hitColor</td><td>Color</td><td>Color.white</td><td></td></tr>
                 <tr><td>trailColor</td><td>Color</td><td style="font-size: xx-small;">Pal.missileYellowBack</td><td></td></tr>
                 <tr><td>trailChance</td><td>float</td><td>-0.0010</td><td></td></tr>
                 <tr><td>trailEffect</td><td>Effect</td><td>Fx.missileTrail</td><td></td></tr>
                 <tr><td>trailParam</td><td>float</td><td>2.0</td><td></td></tr>
                 <tr><td>splashDamageRadius</td><td>float</td><td>-1.0</td><td>溅射范围</td></tr>
-                <tr><td>incendAmount</td><td>int</td><td>0</td><td></td></tr>
-                <tr><td>incendSpread</td><td>float</td><td>8.0</td><td></td></tr>
-                <tr><td>incendChance</td><td>float</td><td>1.0</td><td></td></tr>
-                <tr><td>homingPower</td><td>float</td><td>0.0</td><td></td></tr>
-                <tr><td>homingRange</td><td>float</td><td>50.0</td><td></td></tr>
-                <tr><td>homingDelay</td><td>float</td><td>-1.0</td><td></td></tr>
+                <tr><td>incendAmount</td><td>int</td><td>0</td><td>创造火焰实体数</td></tr>
+                <tr><td>incendSpread</td><td>float</td><td>8.0</td><td>火焰分散范围</td></tr>
+                <tr><td>incendChance</td><td>float</td><td>1.0</td><td>火焰创建几率</td></tr>
+                <tr><td>homingPower</td><td>float</td><td>0.0</td><td>追踪力度</td></tr>
+                <tr><td>homingRange</td><td>float</td><td>50.0</td><td>追踪范围</td></tr>
+                <tr><td>homingDelay</td><td>float</td><td>-1.0</td><td>追踪时延(?</td></tr>
                 <tr><td>lightningColor</td><td>Color</td><td>Pal.surge</td><td></td></tr>
-                <tr><td>lightning</td><td>int</td><td></td><td></td></tr>
-                <tr><td>lightningLength</td><td>int</td><td>5</td><td></td></tr>
-                <tr><td>lightningLengthRand</td><td>int</td><td>0</td><td></td></tr>
-                <tr><td>lightningDamage</td><td>float</td><td>-1</td><td></td></tr>
+                <tr><td>lightning</td><td>int</td><td>0</td><td>移除时创建闪电数量</td></tr>
+                <tr><td>lightningLength</td><td>int</td><td>5</td><td>移除时创建闪电长度</td></tr>
+                <tr><td>lightningLengthRand</td><td>int</td><td>0</td><td>移除时创建闪电额外长度随机上限</td></tr>
+                <tr><td>lightningDamage</td><td>float</td><td>-1</td><td>移除时创建闪电伤害</td></tr>
                 <tr><td>lightningCone</td><td>float</td><td>360.0</td><td></td></tr>
                 <tr><td>lightningAngle</td><td>float</td><td>0.0</td><td></td></tr>
-                <tr><td>lightningType</td><td>@Nullable<br>BulletType</td><td>null</td><td></td></tr>
-                <tr><td>weaveScale</td><td>float</td><td>1.0</td><td></td></tr>
-                <tr><td>weaveMag</td><td>float</td><td>-1.0</td><td></td></tr>
-                <tr><td>hitShake</td><td>float</td><td>0.0</td><td></td></tr>
-                <tr><td>despawnShake</td><td>float</td><td>0.0</td><td></td></tr>
-                <tr><td>puddles</td><td>int</td><td>0</td><td></td></tr>
-                <tr><td>puddleRange</td><td>float</td><td></td><td></td></tr>
-                <tr><td>puddleAmount</td><td>float</td><td>5.0</td><td></td></tr>
-                <tr><td>puddleLiquid</td><td>Liquid</td><td>Liquids.water</td><td></td></tr>
+                <tr><td>lightningType</td><td>@Nullable<br>BulletType</td><td>null</td><td>创建的闪电子弹</td></tr>
+                <tr><td>weaveScale</td><td>float</td><td>1.0</td><td>上下摆动幅度倍率(?</td></tr>
+                <tr><td>weaveMag</td><td>float</td><td>-1.0</td><td>子弹上下摆动幅度</td></tr>
+                <tr><td>hitShake</td><td>float</td><td>0.0</td><td>击中后屏幕抖动</td></tr>
+                <tr><td>despawnShake</td><td>float</td><td>0.0</td><td>移除时屏幕抖动</td></tr>
+                <tr><td>puddles</td><td>int</td><td>0</td><td>击中后形成的水坑数量(?</td></tr>
+                <tr><td>puddleRange</td><td>float</td><td>0.0</td><td>击中后形成的水坑范围</td></tr>
+                <tr><td>puddleAmount</td><td>float</td><td>5.0</td><td>击中后形成的水坑液体量(?</td></tr>
+                <tr><td>puddleLiquid</td><td><a href="./liquid.html">Liquid</a></td><td>Liquids.water</td><td>击中后形成的水坑液体</td></tr>
                 <tr><td>lightRadius</td><td>float</td><td>16.0</td><td>子弹发光范围</td></tr>
                 <tr><td>lightOpacity</td><td>float</td><td>0.30</td><td>发光亮度</td></tr>
                 <tr><td>lightColor</td><td>Color</td><td>Pal.powerLight</td><td>发光颜色</td></tr>
