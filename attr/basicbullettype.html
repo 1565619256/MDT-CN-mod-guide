@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css.css">
+    <title>BasicBulletType</title>
+</head>
+<body>
+    <div>
+        .\<a href="../index.html">README</a>\<a href="./attr.html">attr.main</a>\<a href="./bullet.html">Bullet</a>\<a href="./bullettype.html">BulletType</a>\BasicBulletType>
+    </div>
+    <div class="article">
+        <h1>BasicBulletType</h1>
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>backColor</td><td>Color</td><td style="font-size: xx-small;">Pal.bulletYellowBack</td><td></td></tr>
+                <tr><td>frontColor</td><td>Color</td><td>Pal.bulletYellow</td><td></td></tr>
+                <tr><td>mixColorFrom</td><td>Color</td><td style="font-size: x-small;">new Color(1, 1, 1, 0)</td><td></td></tr>
+                <tr><td>mixColorTo</td><td>Color</td><td style="font-size: x-small;">new Color(1, 1, 1, 0)</td><td></td></tr>
+                <tr><td>width</td><td>float</td><td>5.0</td><td></td></tr>
+                <tr><td>height</td><td>float</td><td>7.0</td><td></td></tr>
+                <tr><td>shrinkX</td><td>float</td><td>0.0</td><td></td></tr>
+                <tr><td>shrinkY</td><td>float</td><td>0.50</td><td></td></tr>
+                <tr><td>spin</td><td>float</td><td>0.0</td><td></td></tr>
+            </tbody>
+        </table>
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public BasicBulletType(float speed, float damage, String bulletSprite){
+    super(speed, damage);
+    this.sprite = bulletSprite;
+}
+
+public BasicBulletType(float speed, float damage){
+    this(speed, damage, "bullet");
+}
+
+public BasicBulletType(){
+    this(1f, 1f, "bullet");
+}
+</pre></div>
+    </div>
+</body>
+</html>
