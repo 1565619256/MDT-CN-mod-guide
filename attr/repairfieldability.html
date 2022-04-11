@@ -17,14 +17,24 @@
         <table>
             <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
             <tbody>
-                <tr><td>amount</td><td>float</td><td>1</td><td>恢复血量(非百分比)</td></tr>
-                <tr><td>reload</td><td>float</td><td>100</td><td>恢复波装载</td></tr>
-                <tr><td>range</td><td>float</td><td>60</td><td>恢复范围</td></tr>
-                <tr><td>healEffect</td><td>float</td><td>Fx.heal</td><td>恢复效果</td></tr>
-                <tr><td>activeEffect</td><td>float</td><td>Fx.healWaveDynamic</td><td>恢复波特效</td></tr>
-                <tr><td>parentizeEffect</td><td>boolean</td><td>false</td><td></td></tr>
+                <tr><td>amount</td><td>浮点型</td><td>1</td><td>恢复血量(非百分比)</td></tr>
+                <tr><td>reload</td><td>浮点型</td><td>100</td><td>恢复波装载</td></tr>
+                <tr><td>range</td><td>浮点型</td><td>60</td><td>恢复范围</td></tr>
+                <tr><td>healEffect</td><td>浮点型</td><td>Fx.heal</td><td>恢复效果</td></tr>
+                <tr><td>activeEffect</td><td>浮点型</td><td>Fx.healWaveDynamic</td><td>恢复波特效</td></tr>
+                <tr><td>parentizeEffect</td><td>布尔型</td><td>false</td><td></td></tr>
             </tbody>
         </table>
+
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public RepairFieldAbility(float amount, float reload, float range){
+    this.amount = amount;
+    this.reload = reload;
+    this.range = range;
+}
+</pre></div>
     </div>
 </body>
 </html>

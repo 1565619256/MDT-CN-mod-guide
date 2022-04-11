@@ -18,12 +18,23 @@
             <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
             <tbody>
                 <tr><td>unit</td><td>UnitType</td><td>null</td><td>生成的单位</td></tr>
-                <tr><td>spawnTime</td><td>float</td><td>60.0</td><td>生成时间</td></tr>
-                <tr><td>spawnX</td><td>float</td><td></td><td>x轴偏移</td></tr>
-                <tr><td>spawnY</td><td>float</td><td></td><td>y轴偏移</td></tr>
+                <tr><td>spawnTime</td><td>浮点型</td><td>60.0</td><td>生成时间</td></tr>
+                <tr><td>spawnX</td><td>浮点型</td><td></td><td>x轴偏移</td></tr>
+                <tr><td>spawnY</td><td>浮点型</td><td></td><td>y轴偏移</td></tr>
                 <tr><td>spawnEffect</td><td>Effect</td><td>Fx.spawn</td><td>生成特效</td></tr>
             </tbody>
         </table>
+
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public UnitSpawnAbility(UnitType unit, float spawnTime, float spawnX, float spawnY){
+    this.unit = unit;
+    this.spawnTime = spawnTime;
+    this.spawnX = spawnX;
+    this.spawnY = spawnY;
+}        
+</pre></div>
     </div>
 </body>
 </html>

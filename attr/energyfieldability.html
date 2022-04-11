@@ -17,30 +17,40 @@
         <table>
             <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
             <tbody>
-                <tr><td>damage</td><td>float</td><td>1</td><td>场伤害</td></tr>
-                <tr><td>reload</td><td>float</td><td>100</td><td>场装载时间</td></tr>
-                <tr><td>range</td><td>float</td><td>60</td><td>场范围</td></tr>
+                <tr><td>damage</td><td>浮点型</td><td>1</td><td>场伤害</td></tr>
+                <tr><td>reload</td><td>浮点型</td><td>100</td><td>场装载时间</td></tr>
+                <tr><td>range</td><td>浮点型</td><td>60</td><td>场范围</td></tr>
                 <tr><td>healEffect</td><td>Effect</td><td>Fx.heal</td><td>场内治愈效果</td></tr>
                 <tr><td>hitEffect</td><td>Effect</td><td>Fx.hitLaserBlast</td><td></td></tr>
                 <tr><td>damageEffect</td><td>Effect</td><td>Fx.chainLightning</td><td></td></tr>
                 <tr><td>status</td><td>StatusEffect</td><td style="font-size: xx-small;">StatusEffects.electrified</td><td>场内被击中获得效果</td></tr>
                 <tr><td>shootSound</td><td>Sound</td><td>Sounds.spark</td><td>场内被影响实体声音</td></tr>
-                <tr><td>statusDuration</td><td>float</td><td><code class="lcode">60.0 * 6.0</code></td><td>效果持续时间</td></tr>
-                <tr><td>targetGround</td><td>boolean</td><td>true</td><td>瞄准陆军</td></tr>
-                <tr><td>targetAir</td><td>boolean</td><td>true</td><td>瞄准空军</td></tr>
-                <tr><td>hitBuildings</td><td>boolean</td><td>true</td><td>瞄准建筑</td></tr>
-                <tr><td>hitUnits</td><td>boolean</td><td>true</td><td>瞄准单位</td></tr>
-                <tr><td>maxTargets</td><td>int</td><td>25</td><td>瞄准实体上限</td></tr>
-                <tr><td>healPercent</td><td>float</td><td>2.50</td><td>建筑恢复百分比</td></tr>
-                <tr><td>layer</td><td>float</td><td><code class="lcode">Layer.bullet - 0.001f</code></td><td>子弹实体图层</td></tr>
-                <tr><td>effectRadius</td><td>float</td><td>5.0</td><td>场特效半径(最外围的圈)</td></tr>
-                <tr><td>sectorRad</td><td>float</td><td>0.140</td><td></td></tr>
-                <tr><td>rotateSpeed</td><td>float</td><td>0.50</td><td>旋转速度</td></tr>
-                <tr><td>sectors</td><td>int</td><td>5</td><td></td></tr>
+                <tr><td>statusDuration</td><td>浮点型</td><td><code class="lcode">60.0 * 6.0</code></td><td>效果持续时间</td></tr>
+                <tr><td>targetGround</td><td>布尔型</td><td>true</td><td>瞄准陆军</td></tr>
+                <tr><td>targetAir</td><td>布尔型</td><td>true</td><td>瞄准空军</td></tr>
+                <tr><td>hitBuildings</td><td>布尔型</td><td>true</td><td>瞄准建筑</td></tr>
+                <tr><td>hitUnits</td><td>布尔型</td><td>true</td><td>瞄准单位</td></tr>
+                <tr><td>maxTargets</td><td>整数型</td><td>25</td><td>瞄准实体上限</td></tr>
+                <tr><td>healPercent</td><td>浮点型</td><td>2.50</td><td>建筑恢复百分比</td></tr>
+                <tr><td>layer</td><td>浮点型</td><td><code class="lcode">Layer.bullet - 0.001f</code></td><td>子弹实体图层</td></tr>
+                <tr><td>effectRadius</td><td>浮点型</td><td>5.0</td><td>场特效半径(最外围的圈)</td></tr>
+                <tr><td>sectorRad</td><td>浮点型</td><td>0.140</td><td></td></tr>
+                <tr><td>rotateSpeed</td><td>浮点型</td><td>0.50</td><td>旋转速度</td></tr>
+                <tr><td>sectors</td><td>整数型</td><td>5</td><td></td></tr>
                 <tr><td>color</td><td>Color</td><td>Pal.heal</td><td>场的主色调</td></tr>
-                <tr><td>useAmmo</td><td>boolean</td><td>true</td><td>场使用子弹</td></tr>
+                <tr><td>useAmmo</td><td>布尔型</td><td>true</td><td>场使用子弹</td></tr>
             </tbody>
         </table>
+
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public EnergyFieldAbility(float damage, float reload, float range){
+    this.damage = damage;
+    this.reload = reload;
+    this.range = range;
+}
+</pre></div>
     </div>
 </body>
 </html>
