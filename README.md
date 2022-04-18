@@ -3,7 +3,7 @@
 ## 文章结构
 文章结构是按层级来分的, 而非文件摆放结构
 
-```txt
+```
 Mindustry-zh_CN-modding-guide
 ├── README.md
 ├── index.html
@@ -24,7 +24,13 @@ Mindustry-zh_CN-modding-guide
 │   │   └── movelightningability.html
 │   └── bullet.html
 │       └── bullettype.html
+│           ├── firebullettype.html
+│           ├── continuouslaserbullettype.html
 │           └── basicbullettype.html
+│               ├── artillerybullettype.html
+│               ├── bombbullettype.html
+│               ├── empbullettype.html
+│               ├── flakbullettype.html
 ├── icon
 └── img
 ```

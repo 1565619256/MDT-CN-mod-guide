@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../css.css">
+    <title>ContinuousLaserBulletType</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../index.html">README</a>\<a href="../attr.html">attr.main</a>\<a href="./bullet.html">Bullet</a>\<a href="./bullettype.html">BulletType</a>\ContinuousLaserBulletType>
+    </div>
+    <div class="article">
+        <h1>ContinuousLaserBulletType</h1>
+        <p>extends BulletType</p>
+        
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>length</td><td>浮点型</td><td>220.0</td><td></td></tr>
+                <tr><td>shake</td><td>浮点型</td><td>1.0</td><td></td></tr>
+                <tr><td>fadeTime</td><td>浮点型</td><td>16.0</td><td></td></tr>
+                <tr><td>lightStroke</td><td>浮点型</td><td>40.0</td><td></td></tr>
+                <tr><td>spaceMag</td><td>浮点型</td><td>35.0</td><td></td></tr>
+                <tr><td>colors</td><td>Color[]</td><td style="font-size: small;">{Color.valueOf("ec745855"),<br>Color.valueOf("ec7458aa"),<br>Color.valueOf("ff9c5a"),<br>Color.white}</td><td></td></tr>
+                <tr><td>tscales</td><td>浮点型[]</td><td>{1.0, 0.7, 0.5, 0.2}</td><td></td></tr>
+                <tr><td>strokes</td><td>浮点型[]</td><td>{2.0, 1.5, 1.0, 0.3}</td><td></td></tr>
+                <tr><td>lenscales</td><td>浮点型[]</td><td>{1.0, 1.12, 1.15, 1.17}</td><td></td></tr>
+                <tr><td>width</td><td>浮点型</td><td>9.0</td><td></td></tr>
+                <tr><td>oscScl</td><td>浮点型</td><td>0.8</td><td></td></tr>
+                <tr><td>oscMag</td><td>浮点型</td><td>1.5</td><td></td></tr>
+                <tr><td>largeHit</td><td>布尔型</td><td>true</td><td></td></tr>
+            </tbody>
+        </table>
+
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public ContinuousLaserBulletType(float damage){
+    this.damage = damage;
+    this.speed = 0f;
+
+    hitEffect = Fx.hitBeam;
+    despawnEffect = Fx.none;
+    hitSize = 4;
+    drawSize = 420f;
+    lifetime = 16f;
+    hitColor = colors[2];
+    incendAmount = 1;
+    incendSpread = 5;
+    incendChance = 0.4f;
+    lightColor = Color.orange;
+    impact = true;
+    keepVelocity = false;
+    collides = false;
+    pierce = true;
+    hittable = false;
+    absorbable = false;
+}
+</pre></div>
+    </div>
+</body>
+</html>

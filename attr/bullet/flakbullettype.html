@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../css.css">
+    <title>FlakBulletType</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../index.html">README</a>\<a href="../attr.html">attr.main</a>\<a href="./bullet.html">Bullet</a>\<a href="./bullettype.html">BulletType</a>\<a href="./basicbullettype.html">BasicBulletType</a>\FlakBulletType>
+    </div>
+    <div class="article">
+        <h1>FlakBulletType</h1>
+        <p>extends BasicBulletType</p>
+
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>explodeRange</td><td>float</td><td>30.0</td><td></td></tr>
+                <tr><td>explodeDelay</td><td>float</td><td>5.0</td><td></td></tr>
+            </tbody>
+        </table>
+
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public FlakBulletType(float speed, float damage){
+    super(speed, damage, "shell");
+    splashDamage = 15f;
+    splashDamageRadius = 34f;
+    hitEffect = Fx.flakExplosionBig;
+    width = 8f;
+    height = 10f;
+    collidesGround = false;
+}
+
+public FlakBulletType(){
+    this(1f, 1f);
+} 
+</pre></div>
+    </div>
+</body>
+</html>
