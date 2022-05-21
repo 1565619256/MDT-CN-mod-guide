@@ -8,7 +8,8 @@ Mindustry-zh_CN-modding-guide
 ├── README.md
 ├── index.html
 ├── css.css
-├── attr
+├── js.html
+├── attr.html
 │   ├── unlockablecontent.html
 │   │   ├── item.html
 │   │   ├── liquid.html
@@ -26,11 +27,18 @@ Mindustry-zh_CN-modding-guide
 │       └── bullettype.html
 │           ├── firebullettype.html
 │           ├── continuouslaserbullettype.html
+│           ├── laserbullettype.html
+│           ├── lightningbullettype.html
+│           ├── liquidbullettype.html
+│           ├── massdriverbolt.html
+│           ├── pointbullettype.html
 │           └── basicbullettype.html
 │               ├── artillerybullettype.html
 │               ├── bombbullettype.html
 │               ├── empbullettype.html
 │               ├── flakbullettype.html
+│               ├── laserboltbullettype.html
+│               ├── missilebullettype.html
 ├── icon
 └── img
 ```

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../css.css">
+    <title>LightningBulletType</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../index.html">README</a>\<a href="../attr.html">attr.main</a>\<a href="./bullet.html">Bullet</a>\<a href="./bullettype.html">BulletType</a>\LightningBulletType>
+    </div>
+    <div class="article">
+        <h1>LightningBulletType</h1>
+        <p>extends BulletType</p>
+
+        <h2>主要属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>lightningColor</td><td>Color</td><td style="font-size: x-small">Pal.lancerLaser</td><td></td></tr>
+                <tr><td>lightningLength</td><td>int</td><td>25</td><td></td></tr>
+                <tr><td>lightningLengthRand</td><td>int</td><td>0</td><td></td></tr>
+            </tbody>
+        </table>
+        
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public LightningBulletType(){
+    damage = 1f;
+    speed = 0f;
+    lifetime = 1;
+    despawnEffect = Fx.none;
+    hitEffect = Fx.hitLancer;
+    keepVelocity = false;
+    hittable = false;
+    status = StatusEffects.shocked;
+}
+</pre></div>
+    </div>
+</body>
+</html>
