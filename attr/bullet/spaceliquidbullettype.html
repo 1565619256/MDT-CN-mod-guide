@@ -4,32 +4,37 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="../../icon/ic_launcher.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../../css.css">
-    <title>PointBulletType</title>
+    <title>SpaceLiquidBulletType</title>
 </head>
 <body>
     <div>
-        .\<a href="../../index.html">README</a>\<a href="../attr.html">attr.main</a>\<a href="./bullet.html">Bullet</a>\<a href="./bullettype.html">BulletType</a>\PointBulletType>
+        .\<a href="../../index.html">README</a>\<a href="../attr.html">attr.main</a>\<a href="./bullet.html">Bullet</a>\<a href="./bullettype.html">BulletType</a>\SpaceLiquidBulletType>
     </div>
     <div class="article">
-        <h1>PointBulletType</h1>
+        <h1>SpaceLiquidBulletType</h1>
         <p>extends <a href="./bullettype.html">BulletType</a></p>
 
         <h2>全部属性</h2>
         <table>
             <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
             <tbody>
-                <tr><td>trailSpacing</td><td>float</td><td>10</td><td></td></tr>
+                <tr><td>orbSize</td><td>float</td><td>5.5</td><td></td></tr>
             </tbody>
         </table>
 
         <h2>构造方法</h2>
         <div class="code"><pre>
-public PointBulletType(){
-    scaleLife = true;
-    lifetime = 100f;
+public SpaceLiquidBulletType(){
+    super(3.5f, 0);
+
     collides = false;
-    keepVelocity = false;
-    backMove = false;
+    lifetime = 90f;
+    despawnEffect = Fx.none;
+    hitEffect = Fx.none;
+    smokeEffect = Fx.none;
+    shootEffect = Fx.none;
+    drag = 0.002f;
+    hittable = false;
 }
 </pre></div>
     </div>

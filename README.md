@@ -32,6 +32,10 @@ Mindustry-zh_CN-modding-guide
 │           ├── liquidbullettype.html
 │           ├── massdriverbolt.html
 │           ├── pointbullettype.html
+│           ├── railbullettype.html
+│           ├── sapbullettype.html
+│           ├── shrapnelbullettype.html
+│           ├── spaceliquidbullettype.html
 │           └── basicbullettype.html
 │               ├── artillerybullettype.html
 │               ├── bombbullettype.html
