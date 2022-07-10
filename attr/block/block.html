@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../css.css">
+    <title>Block</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../index.html">README</a>\<a href="../attr.html">attr.main</a>\<a href="../unlockablecontent.html">UnlockableContent</a>\Block>
+    </div>
+    <div class="article">
+        <h1>Block</h1>
+        <p>extends <a href="../unlockablecontent.html">UnlockableContent</a></p>
+
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>displayFlow</td><td>boolean</td><td>true</td><td>是否显示传输流速</td></tr>
+
+                <tr><td>requirements</td><td>ItemStack[]</td><td>{}</td><td>建造方块所需的建材</td></tr>
+                <tr><td>buildCostMultiplier</td><td>float</td><td>1</td><td>建筑时间倍率(<code class="lcode">全部物品耗时总和 * buildCostMultiplier</code>)</td></tr>
+                <tr><td>category</td><td>Category</td><td style="font-size: xx-small;"><a href="../../constant.html#catagory">Category</a>.distribution</td><td>建筑界面分类</td></tr>
+                <tr><td>buildVisibility</td><td>BuildVisibility</td><td style="font-size: xx-small;"><a href="../../constant.html#buildvisibility">BuildVisibility</a>.hidden</td><td>建筑界面可视级别</td></tr>
+                <tr><td>researchConstMultiplier</td><td>float</td><td>1</td><td>研究时所需材料倍率</td></tr>
+                <tr><td>researchCost</td><td>@Nullable ItemStack[]</td><td>researchCost</td><td>研究所需建材</td></tr>
+
+                <tr><td>configurable</td><td>boolean</td><td></td><td>是否能被配置</td></tr>
+                <tr><td>logicConfigurable</td><td>boolean</td><td>false</td><td>是否能被逻辑方块配置</td></tr>
+                <tr><td>saveConfig</td><td>boolean</td><td>false</td><td>是否保存配置并用到下个方块</td></tr>
+                <tr><td>copyConfig</td><td>boolean</td><td>true</td><td>是否能用中键复制方块配置</td></tr>
+                <tr><td>clearOnDoubleTap</td><td>boolean</td><td>false</td><td>是否能用双击清除方块配置</td></tr>
+
+                <tr><td>destructible</td><td>boolean</td><td></td><td>是否有血量且能被摧毁</td></tr>
+                <tr><td>breakable</td><td>boolean</td><td></td><td>是否能用右键解构该方块</td></tr>
+                <tr><td>rebuildable</td><td>boolean</td><td>true</td><td>建造飞机是否能重构该方块</td></tr>
+
+                <tr><td>requiresWater</td><td>boolean</td><td>false</td><td>是否<b style="color: red">只</b>能建筑在水上</td></tr>
+                <tr><td>placeableLiquid</td><td>boolean</td><td>false</td><td>是否能建筑在水上任何地方</td></tr>
+                <tr><td>placeablePlayer</td><td>boolean</td><td>true</td><td>是否能建筑在玩家脚下?</td></tr>
+                <tr><td>placeableOn</td><td>boolean</td><td>true</td><td>方块是否能放置该地板在上</td></tr>
+
+                <tr><td>solid</td><td>boolean</td><td></td><td>是否为固态</td></tr>
+                <tr><td>solidifes</td><td>boolean</td><td></td><td>是否能成为固态</td></tr>
+                <tr><td>teamPassable</td><td>boolean</td><td></td><td>友军单位是否能越过</td></tr>
+                <tr><td>underBullets</td><td>boolean</td><td></td><td>敌军子弹是否能穿过(被特别瞄准除外)</td></tr>
+
+
+                <tr><td colspan="4" align="center" style="font-size: xx-large;">物品 Item</td></tr>
+                <tr><td>hasItems</td><td>boolean</td><td></td><td>是否有物体模块</td></tr>
+                <tr><td>acceptsItems</td><td>boolean</td><td>false</td><td></td></tr>
+                <tr><td>separateItemCapacity</td><td>boolean</td><td>false</td><td>是否单独为物品记录容量, 比如核心方块该值为<code class="lcode">true</code></td></tr>
+                <tr><td>itemCapacity</td><td>int</td><td>10</td><td>物品存储数量</td></tr>
+                <tr><td>noSideBlend</td><td>boolean</td><td>false</td><td>是否可以侧向输入, 例如 <img src="../../img/armored-conveyor.png" width="32px" height="32px"> 该值为<code class="lcode">true</code></td></tr>
+                <tr><td>itemDrop</td><td>@Nullable Item</td><td>null</td><td>掉落的物品, 用于地板</td></tr>
+                <tr><td>unloadable</td><td>boolean</td><td>true</td><td>装卸器是否可作用在此方块上</td></tr>
+                <tr><td>allowResupply</td><td>boolean</td><td>false</td><td>单位是否能拿取该方块内的物品作为补给</td></tr>
+
+
+                <tr><td colspan="4" align="center" style="font-size: xx-large;">液体 Liquid</td></tr>
+                <tr><td>hasLiquids</td><td>boolean</td><td></td><td>是否有液体模块</td></tr>
+                <tr><td>liquidCapacity</td><td>float</td><td>10</td><td>液体存储容量</td></tr>
+                <tr><td>liquidPressure</td><td>float</td><td>1</td><td>输出液压大小, 与传输的远近有关</td></tr>
+                <tr><td>outputsLiquid</td><td>boolean</td><td>false</td><td>是否有液体输出</td></tr>
+
+
+                <tr><td colspan="4" align="center" style="font-size: xx-large;">电力 Power</td></tr>
+                <tr><td>hasPower</td><td>boolean</td><td></td><td>是否有电力模块</td></tr>
+                <tr><td>consumesPower</td><td>boolean</td><td>true</td><td>是否消耗电力</td></tr>
+                <tr><td>outputsPower</td><td>boolean</td><td>false</td><td>是否产生电力</td></tr>
+                <tr><td>conductivePower</td><td>boolean</td><td>false</td><td>是否直线的传输电力</td></tr>
+                <tr><td>insulated</td><td>boolean</td><td>false</td><td>方块是否绝缘</td></tr>
+            </tbody>
+        </table>
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public Block(String name){
+    super(name);
+    initBuilding();
+}
+</pre></div>
+    </div>
+</body>
+</html>

@@ -19,6 +19,7 @@
         <h2>特殊属性json写法(WIP)</h2>
         <h2><a href="./js/js.html">高阶模组(WIP)</a></h2>
         <h2><a href="./attr/attr.html">所有属性(WIP)</a></h2>
+        <h2><a href="./constant.html">常量</a></h2>
 
 
         <h2>制作基础(WIP)</h2>
@@ -60,6 +61,8 @@ project
 
         <p>所有你模组的文件名<b style="color: red">不应有</b>空格<code class="lcode"> </code>或大写字母
         <br>应该用<code class="lcode">-</code>代替空格<code class="lcode"> </code>并且全小写(中文是允许的)来命名文件以便后续引用</p>
+
+
         <h3><code class="lcode">mod.json</code></h3>
         <code class="lcode">mod.json</code>是一个模组的头文件, 是<b style="color: red">最重要</b>的文件
         <!-- mod.json配置文件说明 -->
@@ -77,6 +80,12 @@ project
             </tbody>
         </table>
 
+
+        <h3>翻译文件</h3>
+        <p>翻译文件是可选的, 其用处是给你的模组内容转换成不同语言. 翻译文件是一个纯文本文件且存放在<code class="lcode">bundles/*</code>目录下, 其语法如下</p>
+        <ul>
+            <li><code class="lcode">&lt;内容类型&gt;.&lt;模组名&gt;-&lt;内容名&gt; = &lt;文本&gt;</code></li>
+        </ul>
     </div>
 </body>
 </html>
