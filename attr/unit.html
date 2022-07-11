@@ -47,7 +47,7 @@
                 <tr><td>lowAltitude</td><td>boolean</td><td>false</td><td>低空飞行, 与图层有关</td></tr>
                 <tr><td>circleTarget</td><td>boolean</td><td>false</td><td>空军在敌人上方盘旋</td></tr>
                 <tr><td>destructibleWreck</td><td>boolean</td><td>true</td><td></td></tr>
-                <tr><td>groundLayer</td><td>float</td><td>Layer.groundUnit</td><td>类似图层, 高于其他时显示在上方<br>(范围: -11~320)</td></tr>
+                <tr><td>groundLayer</td><td>float</td><td><a href="../constant.html#layer">Layer</a>.groundUnit</td><td>类似图层, 高于其他时显示在上方<br>(范围: -11~320)</td></tr>
                 <tr><td>payloadCapacity</td><td>float</td><td>8</td><td>单位最大荷载</td></tr>
                 <tr><td>aimDst</td><td>float</td><td>-1.0</td><td></td></tr>
                 <tr><td>buildBeamOffset</td><td>float</td><td>3.80</td><td></td></tr>
@@ -58,7 +58,7 @@
                 <tr><td>hovering</td><td>boolean</td><td>false</td><td>单位是否不会被地形淹没和获得地面效果</td></tr>
                 <tr><td>omniMovement</td><td>boolean</td><td>true</td><td>修改后基本不受玩家控制了(能附身)</td></tr>
                 <tr><td>showHeal</td><td>boolean</td><td>true</td><td>被治愈时是否显色</td></tr>
-                <tr><td>healColor</td><td>boolean</td><td>Pal.heal</td><td><b style="color: red">被</b>治愈时的颜色</td></tr>
+                <tr><td>healColor</td><td>boolean</td><td><a href="../constant.html#pal">Pal</a>.heal</td><td><b style="color: red">被</b>治愈时的颜色</td></tr>
                 <tr><td>fallEffect</td><td>Effect</td><td>Fx.fallSmoke</td><td></td></tr>
                 <tr><td>fallThrusterEffect</td><td>Effect</td><td>Fx.fallSmoke</td><td></td></tr>
                 <tr><td>deathExplosionEffect</td><td>Effect</td><td>Fx.dynamicExplosion</td><td></td></tr>
@@ -68,7 +68,7 @@
                 <tr><td>playerTargetFlags</td><td>BlockFlag[]</td><td>{BlockFlag.core, null}</td><td></td></tr>
                 <tr><td>mineItems</td><td>Seq&lt;Item&gt;</td><td>Seq.with(Items.copper,<br>Items.lead,<br>Items.titanium,<br>Items.thorium)</td><td>决定AI挖的矿</td></tr>
                 <tr><td>outlines</td><td>boolean</td><td>true</td><td>绘制外框</td></tr>
-                <tr><td>outlineColor</td><td>Color</td><td>Pal.darkerMetal</td><td>外框颜色</td></tr>
+                <tr><td>outlineColor</td><td>Color</td><td><a href="../constant.html#pal">Pal</a>.darkerMetal</td><td>外框颜色</td></tr>
                 <tr><td>outlineRadius</td><td>int</td><td>3</td><td>外框粗细</td></tr>
                 <tr><td>legCount</td><td>int</td><td>4</td><td>腿的个数</td></tr>
                 <tr><td>legGroupSize</td><td>int</td><td>2</td><td>貌似和移动间距有关</td></tr>
@@ -90,7 +90,7 @@
                 <tr><td>mechStride</td><td>float</td><td>-1.0</td><td></td></tr>
                 <tr><td>mechStepShake</td><td>float</td><td>-1.0</td><td></td></tr>
                 <tr><td>mechStepParticles</td><td>boolean</td><td>false</td><td></td></tr>
-                <tr><td>mechLegColor</td><td>Color</td><td>Pal.darkMetal</td><td></td></tr>
+                <tr><td>mechLegColor</td><td>Color</td><td><a href="../constant.html#pal">Pal</a>.darkMetal</td><td></td></tr>
                 <tr><td>itemCapacity</td><td>int</td><td>-1</td><td>单位物品容量</td></tr>
                 <tr><td>ammoCapacity</td><td>int</td><td>-1</td><td>单位弹药容量(单位弹药选项打开)</td></tr>
                 <tr><td>ammoType</td><td>AmmoType</td><td style="font-size: xx-small">new ItemAmmoType(Items.copper)</td><td>单位使用子弹(单位弹药选项打开)</td></tr>
@@ -113,7 +113,7 @@
                 <tr><td>itemOffsetY</td><td>float</td><td>3.0</td><td>物品显示偏移(-y)</td></tr>
                 <tr><td>lightRadius</td><td>float</td><td>-1.0</td><td>灯光范围</td></tr>
                 <tr><td>lightOpacity</td><td>float</td><td>0.60</td><td>灯光外围亮度?</td></tr>
-                <tr><td>lightColor</td><td>Color</td><td>Pal.powerLight</td><td>灯光颜色</td></tr>
+                <tr><td>lightColor</td><td>Color</td><td><a href="../constant.html#pal">Pal</a>.powerLight</td><td>灯光颜色</td></tr>
                 <tr><td>drawCell</td><td>boolean</td><td>true</td><td>绘制核心</td></tr>
                 <tr><td>drawItems</td><td>boolean</td><td>true</td><td>绘制携带物品</td></tr>
                 <tr><td>drawShields</td><td>boolean</td><td>true</td><td>绘制护盾</td></tr>

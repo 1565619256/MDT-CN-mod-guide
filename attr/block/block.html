@@ -18,14 +18,26 @@
         <table>
             <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
             <tbody>
+                <tr><td>canOverdrive</td><td>boolean</td><td>true</td><td>是否能被超速机加速</td></tr>
                 <tr><td>displayFlow</td><td>boolean</td><td>true</td><td>是否显示传输流速</td></tr>
+                <tr><td>size</td><td>int</td><td>1</td><td>方块边长</td></tr>
+                <tr><td>health</td><td>int</td><td>-1</td><td>方块生命值(-1为默认值)</td></tr>
+                <tr><td>scaledHealth</td><td>flaot</td><td>-1</td><td>默认生命值时倍率</td></tr>
+                <tr><td>armor</td><td>float</td><td>0</td><td>方块伤害吸收值, 类似于单位护甲值</td></tr>
+                <tr><td>baseExplosiveness</td><td>float</td><td>0</td><td>方块基础爆炸强度</td></tr>
+                <tr><td>crushDamageMultiplier</td><td>float</td><td>1</td><td>被坦克碾压伤害倍率</td></tr>
+                <tr><td>fogRadius</td><td>int</td><td>-1</td><td>探迷雾范围</td></tr>
+                <tr><td>absorbLasers</td><td>boolean</td><td>false</td><td>是否吸收激光</td></tr>
+
+                <tr><td>targetable</td><td>boolean</td><td>true</td><td>单位是否可瞄准该方块</td></tr>
+                <tr><td>priority</td><td>float</td><td style="font-size: xx-small;"><a href="../../constant.html#targetpriority">TargetPriority</a>.base</td><td>被攻击优先度</td></tr>
 
                 <tr><td>requirements</td><td>ItemStack[]</td><td>{}</td><td>建造方块所需的建材</td></tr>
                 <tr><td>buildCostMultiplier</td><td>float</td><td>1</td><td>建筑时间倍率(<code class="lcode">全部物品耗时总和 * buildCostMultiplier</code>)</td></tr>
                 <tr><td>category</td><td>Category</td><td style="font-size: xx-small;"><a href="../../constant.html#catagory">Category</a>.distribution</td><td>建筑界面分类</td></tr>
                 <tr><td>buildVisibility</td><td>BuildVisibility</td><td style="font-size: xx-small;"><a href="../../constant.html#buildvisibility">BuildVisibility</a>.hidden</td><td>建筑界面可视级别</td></tr>
                 <tr><td>researchConstMultiplier</td><td>float</td><td>1</td><td>研究时所需材料倍率</td></tr>
-                <tr><td>researchCost</td><td>@Nullable ItemStack[]</td><td>researchCost</td><td>研究所需建材</td></tr>
+                <tr><td>researchCost</td><td>@Nullable ItemStack[]</td><td></td><td>研究所需建材</td></tr>
 
                 <tr><td>configurable</td><td>boolean</td><td></td><td>是否能被配置</td></tr>
                 <tr><td>logicConfigurable</td><td>boolean</td><td>false</td><td>是否能被逻辑方块配置</td></tr>
@@ -36,6 +48,8 @@
                 <tr><td>destructible</td><td>boolean</td><td></td><td>是否有血量且能被摧毁</td></tr>
                 <tr><td>breakable</td><td>boolean</td><td></td><td>是否能用右键解构该方块</td></tr>
                 <tr><td>rebuildable</td><td>boolean</td><td>true</td><td>建造飞机是否能重构该方块</td></tr>
+                <tr><td>replaceable</td><td>boolean</td><td>true</td><td>是否能被覆盖</td></tr>
+                <tr><td>alwaysReplace</td><td>boolean</td><td>false</td><td>是否任何情况都能被覆盖</td></tr>
 
                 <tr><td>requiresWater</td><td>boolean</td><td>false</td><td>是否<b style="color: red">只</b>能建筑在水上</td></tr>
                 <tr><td>placeableLiquid</td><td>boolean</td><td>false</td><td>是否能建筑在水上任何地方</td></tr>
@@ -48,6 +62,24 @@
                 <tr><td>underBullets</td><td>boolean</td><td></td><td>敌军子弹是否能穿过(被特别瞄准除外)</td></tr>
 
 
+                <tr><td colspan="4" align="center" style="font-size: xx-large;">外观</td></tr>
+                <tr><td>variants</td><td>int</td><td>0</td><td>方块贴图变种数量<br>(贴图命名: <code class="lcode">&lt;name&gt;&lt;变种类型&gt;</code>)</td></tr>
+                <tr><td>drawCracks</td><td>boolean</td><td>true</td><td>是否绘制受伤痕迹</td></tr>
+                <tr><td>drawTeamOverlay</td><td>boolean</td><td>true</td><td>是否绘制队伍标识(右下角显示)</td></tr>
+                <tr><td>squareSprite</td><td>boolean</td><td>true</td><td>贴图是否为完整的正方形</td></tr>
+                <tr><td>hasColor</td><td>boolean</td><td>false</td><td>该方块是否有小地图颜色</td></tr>
+                <tr><td>mapColor</td><td>Color</td><td style="font-size: xx-small;">new Color(0, 0, 0, 1)</td><td>该方块在小地图显示颜色</td></tr>
+                <tr><td>hasShadow</td><td>boolean</td><td>true</td><td>是否有影子</td></tr>
+                <tr><td>customShadow</td><td>boolean</td><td>false</td><td>是否可自定义影子<br>(贴图命名: <code class="lcode">&lt;name&gt;-shadow</code>)</td></tr>
+                <tr><td>emitLight</td><td>boolean</td><td>false</td><td>是否能发出光亮</td></tr>
+                <tr><td>lightColor</td><td>Color</td><td>Color.white.cpy()</td><td>发出光亮的颜色</td></tr>
+                <tr><td>lightRadius</td><td>float</td><td>60</td><td>发光范围</td></tr>
+                <tr><td>outlineIcon</td><td>boolean</td><td>false</td><td>是否描边</td></tr>
+                <tr><td>outlineColor</td><td>Color</td><td style="font-size: xx-small;">Color.valueOf("404049")</td><td>描边颜色</td></tr>
+                <tr><td>outlineRadius</td><td>float</td><td>4</td><td>描边线粗细</td></tr>
+
+
+
                 <tr><td colspan="4" align="center" style="font-size: xx-large;">物品 Item</td></tr>
                 <tr><td>hasItems</td><td>boolean</td><td></td><td>是否有物体模块</td></tr>
                 <tr><td>acceptsItems</td><td>boolean</td><td>false</td><td></td></tr>
@@ -55,6 +87,7 @@
                 <tr><td>itemCapacity</td><td>int</td><td>10</td><td>物品存储数量</td></tr>
                 <tr><td>noSideBlend</td><td>boolean</td><td>false</td><td>是否可以侧向输入, 例如 <img src="../../img/armored-conveyor.png" width="32px" height="32px"> 该值为<code class="lcode">true</code></td></tr>
                 <tr><td>itemDrop</td><td>@Nullable Item</td><td>null</td><td>掉落的物品, 用于地板</td></tr>
+                <tr><td>playerUnmineable</td><td>boolean</td><td>false</td><td>玩家是否可挖掘</td></tr>
                 <tr><td>unloadable</td><td>boolean</td><td>true</td><td>装卸器是否可作用在此方块上</td></tr>
                 <tr><td>allowResupply</td><td>boolean</td><td>false</td><td>单位是否能拿取该方块内的物品作为补给</td></tr>
 

@@ -12,58 +12,199 @@
     </div>
     <div class="article">
         <h1>常量</h1>
+        <ul>
+            <li><a href="#category">Category 分类</a></li>
+            <li><a href="#buildvisibility">BuildVisibility 可见层级</a></li>
+            <li><a href="#targetpriority">TargetPriority 优先级</a></li>
+            <li><a href="#statuseffect">StatusEffect 效果</a></li>
+            <li><a href="#layer">Layer 图层</a></li>
+            <li><a href="#pal">Pal</a></li>
+        </ul>
         <table>
             <thead>
                 <tr><th>常量堆(我不知道该叫什么ww)</th><th>成员</th><th>释义</th></tr>
             </thead>
             <tbody>
-                <tr><td rowspan="9" align="center" style="font-size: xx-large;" id="category">Category</td><td>turret</td><td>炮台</td></tr>
-                <tr><td>production</td><td>生产</td></tr>
-                <tr><td>distribution</td><td>(物品)运输</td></tr>
-                <tr><td>liquid</td><td>液体(生产/运输)</td></tr>
-                <tr><td>power</td><td>电力(生产/运输)</td></tr>
-                <tr><td>defense</td><td>防御</td></tr>
-                <tr><td>units</td><td>荷载(生产/运输)</td></tr>
-                <tr><td>effect</td><td>增益</td></tr>
-                <tr><td>logic</td><td>逻辑</td></tr>
+                <tr><td rowspan="10" align="center" style="font-size: xx-large;" id="category">分类<br>Category</td></tr>
+                    <tr><td>turret</td><td>炮台</td></tr>
+                    <tr><td>production</td><td>生产</td></tr>
+                    <tr><td>distribution</td><td>(物品)运输</td></tr>
+                    <tr><td>liquid</td><td>液体(生产/运输)</td></tr>
+                    <tr><td>power</td><td>电力(生产/运输)</td></tr>
+                    <tr><td>defense</td><td>防御</td></tr>
+                    <tr><td>units</td><td>荷载(生产/运输)</td></tr>
+                    <tr><td>effect</td><td>增益</td></tr>
+                    <tr><td>logic</td><td>逻辑</td></tr>
 
                 <tr><td colspan="3" align="center">- - - - -</td></tr>
-                <tr><td rowspan="10" align="center" style="font-size: xx-large;" id="buildvisibility">BuildVisibility</td><td>hidden</td><td>隐藏</td></tr>
-                <tr><td>shown</td><td>显示</td></tr>
-                <tr><td>debugOnly</td><td>勘误专属</td></tr>
-                <tr><td>editorOnly</td><td>地图编辑器专属</td></tr>
-                <tr><td>sandboxOnly</td><td>沙盒模式专属</td></tr>
-                <tr><td>campaignOnly</td><td>战役模式专属</td></tr>
-                <tr><td>lightningOnly</td><td></td></tr>
-                <tr><td>berylliumOnly</td><td></td></tr>
-                <tr><td>ammoOnly</td><td></td></tr>
-                <tr><td>fogOnly</td><td>战争迷雾模式专属</td></tr>
+                <tr><td rowspan="11" align="center" style="font-size: xx-large;" id="buildvisibility">可见等级<br>BuildVisibility</td></tr>
+                    <tr><td>hidden</td><td>隐藏</td></tr>
+                    <tr><td>shown</td><td>显示</td></tr>
+                    <tr><td>debugOnly</td><td>勘误专属</td></tr>
+                    <tr><td>editorOnly</td><td>地图编辑器专属</td></tr>
+                    <tr><td>sandboxOnly</td><td>沙盒模式专属</td></tr>
+                    <tr><td>campaignOnly</td><td>战役模式专属</td></tr>
+                    <tr><td>lightningOnly</td><td></td></tr>
+                    <tr><td>berylliumOnly</td><td></td></tr>
+                    <tr><td>ammoOnly</td><td></td></tr>
+                    <tr><td>fogOnly</td><td>战争迷雾模式专属</td></tr>
 
                 <tr><td colspan="3" align="center">- - - - -</td></tr>
-                <tr><td rowspan="22" align="center" style="font-size: xx-large;" id="statuseffect">StatusEffect</td></tr>
-                <tr><td>none</td><td>空效果</td></tr>
-                <tr><td>burning</td><td>燃烧(持续受到伤害)</td></tr>
-                <tr><td>freezing</td><td>冻结(暂时减少血量和移速上限, 加强爆炸伤害)</td></tr>
-                <tr><td>unmoving</td><td>静止(暂时大幅度减少单位移速)</td></tr>
-                <tr><td>slow</td><td>减速(暂时 中程度减少单位移速)</td></tr>
-                <tr><td>wet</td><td>潮湿(暂时减少移速上限, 加强电击伤害)</td></tr>
-                <tr><td>muddy</td><td>泥泞(暂时减少移速上限)</td></tr>
-                <tr><td>melting</td><td>融化(暂时减少生命上限和移速)</td></tr>
-                <tr><td>sapped</td><td>弱化(暂时减少生命上限和移速上限)</td></tr>
-                <tr><td>tarred</td><td>油浸(暂时减少单位移速)</td></tr>
-                <tr><td>overdrive</td><td>过载(增加移速和伤害倍率, 减少生命上限, 永不消失)</td></tr>
-                <tr><td>overclock</td><td>超频(暂时增加移速, 伤害和生命上限)</td></tr>
-                <tr><td>shielded</td><td>武甲(暂时增加生命上限)</td></tr>
-                <tr><td>shocked</td><td>电击(只在潮湿加成下作用)</td></tr>
-                <tr><td>blasted</td><td>爆炸(只在冻结加成下作用)</td></tr>
-                <tr><td>corroded</td><td>腐蚀(持续受到伤害)</td></tr>
-                <tr><td>boss</td><td>领头(增加伤害倍率和生命上限, 永不消失)</td></tr>
-                <tr><td>sporeSlowed</td><td>孢子减速(暂时减少移速上限)</td></tr>
-                <tr><td>disarmed</td><td>缴械(暂时无法使用武器)</td></tr>
-                <tr><td>electrified</td><td>电磁紊乱(暂时减少移速上限, 增加换弹时间)</td></tr>
-                <tr><td>invincible</td><td>无敌</td></tr>
-            </tbody>
-        </table>
+                <tr><td rowspan="6" align="center" style="font-size: xx-large;" id="targetpriority">优先级<br>TargetPriority<br><span style="font-size: xx-small;">其实就是代表一个数字</span></td></tr>
+                    <tr><td>wall(-2)</td><td>没有人关心墙</td></tr>
+                    <tr><td>transport(-1)</td><td>基本传输措施不如工厂重要</td></tr>
+                    <tr><td>base(0)</td><td>大多数方块</td></tr>
+                    <tr><td>turret(1)</td><td>炮塔能造成伤害所以他们比较重要</td></tr>
+                    <tr><td>core(2)</td><td>核心永远是最重要销毁的东西</td></tr>
+
+                <tr><td colspan="3" align="center">- - - - -</td></tr>
+                <tr><td rowspan="22" align="center" style="font-size: xx-large;" id="statuseffect">效果<br>StatusEffect</td></tr>
+                    <tr><td>none</td><td>空效果</td></tr>
+                    <tr><td>burning</td><td>燃烧(持续受到伤害)</td></tr>
+                    <tr><td>freezing</td><td>冻结(暂时减少血量和移速上限, 加强爆炸伤害)</td></tr>
+                    <tr><td>unmoving</td><td>静止(暂时大幅度减少单位移速)</td></tr>
+                    <tr><td>slow</td><td>减速(暂时 中程度减少单位移速)</td></tr>
+                    <tr><td>wet</td><td>潮湿(暂时减少移速上限, 加强电击伤害)</td></tr>
+                    <tr><td>muddy</td><td>泥泞(暂时减少移速上限)</td></tr>
+                    <tr><td>melting</td><td>融化(暂时减少生命上限和移速)</td></tr>
+                    <tr><td>sapped</td><td>弱化(暂时减少生命上限和移速上限)</td></tr>
+                    <tr><td>tarred</td><td>油浸(暂时减少单位移速)</td></tr>
+                    <tr><td>overdrive</td><td>过载(增加移速和伤害倍率, 减少生命上限, 永不消失)</td></tr>
+                    <tr><td>overclock</td><td>超频(暂时增加移速, 伤害和生命上限)</td></tr>
+                    <tr><td>shielded</td><td>武甲(暂时增加生命上限)</td></tr>
+                    <tr><td>shocked</td><td>电击(只在潮湿加成下作用)</td></tr>
+                    <tr><td>blasted</td><td>爆炸(只在冻结加成下作用)</td></tr>
+                    <tr><td>corroded</td><td>腐蚀(持续受到伤害)</td></tr>
+                    <tr><td>boss</td><td>领头(增加伤害倍率和生命上限, 永不消失)</td></tr>
+                    <tr><td>sporeSlowed</td><td>孢子减速(暂时减少移速上限)</td></tr>
+                    <tr><td>disarmed</td><td>缴械(暂时无法使用武器)</td></tr>
+                    <tr><td>electrified</td><td>电磁紊乱(暂时减少移速上限, 增加换弹时间)</td></tr>
+                    <tr><td>invincible</td><td>无敌</td></tr>
+
+                <tr><td colspan="3" align="center">- - - - -</td></tr>
+                <tr><td rowspan="33" align="center" style="font-size: xx-large;" id="layer">图层<br>Layer<br><span style="font-size: xx-small;">其实就是代表一个数字</span></td></tr>
+                    <tr><td>min(-11)</td><td>最低图层</td></tr>
+                    <tr><td>background(-10)</td><td>背景</td></tr>
+                    <tr><td>floor(0)</td><td>地面</td></tr>
+                    <tr><td>scorch(10)</td><td></td></tr>
+                    <tr><td>debris(20)</td><td></td></tr>
+                    <tr><td>blockUnder(29.5)</td><td></td></tr>
+                    <tr><td>block(30)</td><td>大多数方块所用的图层</td></tr>
+                    <tr><td>blockCracks(30.1)</td><td>方块裂痕</td></tr>
+                    <tr><td>blockAfterCracks(30.2)</td><td></td></tr>
+                    <tr><td>blockAdditive(31)</td><td>方块获得增益</td></tr>
+                    <tr><td>blockOver(35)</td><td></td></tr>
+                    <tr><td>blockBuilding(40)</td><td></td></tr>
+                    <tr><td>turret(50)</td><td>炮台</td></tr>
+                    <tr><td>turretHeat(50.1)</td><td>炮台过热</td></tr>
+                    <tr><td>groundUnit(60)</td><td>地面单位</td></tr>
+                    <tr><td>power(70)</td><td>电能</td></tr>
+                    <tr><td>legUnit(75)</td><td>腿单位</td></tr>
+                    <tr><td>darkness(80)</td><td>黑暗(光学)</td></tr>
+                    <tr><td>plans(85)</td><td></td></tr>
+                    <tr><td>flyingUnitLow(90)</td><td>低空飞行单位</td></tr>
+                    <tr><td>bullet(100)</td><td>子弹</td></tr>
+                    <tr><td>effect(110)</td><td>特效</td></tr>
+                    <tr><td>flyingUnit(115)</td><td>飞行单位</td></tr>
+                    <tr><td>overlayUI(120)</td><td></td></tr>
+                    <tr><td>buildBeam(122)</td><td></td></tr>
+                    <tr><td>shields(125)</td><td>力墙</td></tr>
+                    <tr><td>weather(130)</td><td>天气效果</td></tr>
+                    <tr><td>playerName(150)</td><td>玩家昵称</td></tr>
+                    <tr><td>fogOfWar(160)</td><td>战争迷雾</td></tr>
+                    <tr><td>end(200)</td><td>图层终点</td></tr>
+                    <tr><td>endPixeled(210)</td><td>像素化终点, 多用于文字</td></tr>
+                    <tr><td>max(220)</td><td>世界最高点理塘(</td></tr>
+
+                <tr><td colspan="3" align="center">- - - - -</td></tr>
+                <tr><td rowspan="92" align="center" style="font-size: xx-large;" id="pal">Pal</td></tr>
+                    <tr><td>darkOutline</td><td style="background-color: #2d2f39; color: white">2f2f39</td></tr>
+                    <tr><td>thoriumPink</td><td style="background-color: #f9a37c">f9a3c7</td></tr>
+                    <tr><td>coalBlack</td><td style="background-color: #272727; color: white">272727</td></tr>
+                    <tr><td>items</td><td style="background-color: #2ea756">2ea756</td></tr>
+                    <tr><td>command</td><td style="background-color: #eab678">eab678</td></tr>
+                    <tr><td>sap</td><td style="background-color: #665c9f">665c9f</td></tr>
+                    <tr><td>sapBullet</td><td style="background-color: #bf92f9">bf92f9</td></tr>
+                    <tr><td>sapBulletBack</td><td style="background-color: #6d56bf">6d56bf</td></tr>
+                    <tr><td>regen</td><td style="background-color: #d1efff">d1efff</td></tr>
+                    <tr><td>reactorPurple</td><td style="background-color: #bf92f9">bf92f9</td></tr>
+                    <tr><td>reactorPurple2</td><td style="background-color: #8a73c6">8a73c6</td></tr>
+                    <tr><td>spore</td><td style="background-color: #7457ce">7457ce</td></tr>
+                    <tr><td>shield</td><td style="background-color: #ffd37f">ffd37f46</td></tr>
+                    <tr><td>bulletYellow</td><td style="background-color: #fff8e8">fff8e8</td></tr>
+                    <tr><td>bulletYellowBack</td><td style="background-color: #f9c27a">f9c27a</td></tr>
+                    <tr><td>darkMetal</td><td style="background-color: #6e7080">6e7080</td></tr>
+                    <tr><td>darkerMetal</td><td style="background-color: #565666; color: white">565666</td></tr>
+                    <tr><td>darkestMetal</td><td style="background-color: #38393f; color: white">38393f</td></tr>
+                    <tr><td>missileYellow</td><td style="background-color: #ffd2ae">ffd2ae</td></tr>
+                    <tr><td>missileYellowBack</td><td style="background-color: #e58956">e58956</td></tr>
+                    <tr><td>meltdownHit</td><td style="background-color: #ffb98b">ffb98b</td></tr>
+                    <tr><td>plastaniumBack</td><td style="background-color: #d8d97f">d8d97f</td></tr>
+                    <tr><td>plastaniumFront</td><td style="background-color: #fffac6">fffac6</td></tr>
+                    <tr><td>turretHeat</td><td style="background-color: #ab3400">ab3400</td></tr>
+                    <tr><td>lightOrange</td><td style="background-color: #f68021">f68021</td></tr>
+                    <tr><td>lightishOrange</td><td style="background-color: #f8ad42">f8ad42</td></tr>
+                    <tr><td>lighterOrange</td><td style="background-color: #f6e096">f6e096</td></tr>
+                    <tr><td>lightishGray</td><td style="background-color: #a2a2a2">a2a2a2</td></tr>
+                    <tr><td>darkishGray</td><td style="background-color: #767676">767676</td></tr>
+                    <tr><td>darkerGray</td><td style="background-color: #515151; color: white">515151</td></tr>
+                    <tr><td>darkestGray</td><td style="background-color: #252525; color: white">252525</td></tr>
+                    <tr><td>shadow</td><td style="background-color: #000; color: white">00000056</td></tr>
+                    <tr><td>ammo</td><td style="background-color: #ff8947">ff8947</td></tr>
+                    <tr><td>boostTo</td><td style="background-color: #ffad4d">ffad4d</td></tr>
+                    <tr><td>boostFrom</td><td style="background-color: #ff7f57">ff7f57</td></tr>
+                    <tr><td>lancerLaser</td><td style="background-color: #a9d8ff">a9d8ff</td></tr>
+                    <tr><td>stoneGray</td><td style="background-color: #8f8f8f">8f8f8f</td></tr>
+                    <tr><td>engine</td><td style="background-color: #ffbb64">ffbb64</td></tr>
+                    <tr><td>health</td><td style="background-color: #ff341c">ff341c</td></tr>
+                    <tr><td>heal</td><td style="background-color: #98ffa9">98ffa9</td></tr>
+                    <tr><td>bar</td><td style="background-color: #708090">708090</td></tr>
+                    <tr><td>accent</td><td style="background-color: #ffd37f">ffd37f</td></tr>
+                    <tr><td>stat</td><td style="background-color: #ffd37f">ffd37f</td></tr>
+                    <tr><td>gray</td><td style="background-color: #454545; color: white">454545</td></tr>
+                    <tr><td>metalGrayDark</td><td style="background-color: #6e7080">6e7080</td></tr>
+                    <tr><td>accentBack</td><td style="background-color: #d4816b">d4816b</td></tr>
+                    <tr><td>place</td><td style="background-color: #6335f8">6335f8</td></tr>
+                    <tr><td>remove</td><td style="background-color: #e55454">e55454</td></tr>
+                    <tr><td>noplace</td><td style="background-color: #ffa697">ffa697</td></tr>
+                    <tr><td>removeBack</td><td style="background-color: #a73e3e">a73e3e</td></tr>
+                    <tr><td>placeRotate</td><td style="background-color: #ffd37f">accent</td></tr>
+                    <tr><td>breakInvalid</td><td style="background-color: #d44b3d">d44b3d</td></tr>
+                    <tr><td>range</td><td style="background-color: #f4ba6e">f4ba6e</td></tr>
+                    <tr><td>power</td><td style="background-color: #fbad67">fbad67</td></tr>
+                    <tr><td>powerBar</td><td style="background-color: #ec7b4c">ec7b4c</td></tr>
+                    <tr><td>powerLight</td><td style="background-color: #fbd367">fbd367</td></tr>
+                    <tr><td>placing</td><td style="background-color: #ffd37f">accent</td></tr>
+                    <tr><td>unitFront</td><td style="background-color: #ffa665">ffa665</td></tr>
+                    <tr><td>unitBack</td><td style="background-color: #d06b53">d06b53</td></tr>
+                    <tr><td>lightTrail</td><td style="background-color: #ffe2a9">ffea29</td></tr>
+                    <tr><td>surge</td><td style="background-color: #f3e979">f3e979</td></tr>
+                    <tr><td>plastanium</td><td style="background-color: #a1b46e">a1b46e</td></tr>
+                    <tr><td>redSpark</td><td style="background-color: #fbb97f">fbb97f</td></tr>
+                    <tr><td>orangeSpark</td><td style="background-color: #d2b29c">d2b29c</td></tr>
+                    <tr><td>redDust</td><td style="background-color: #ffa480">ffa480</td></tr>
+                    <tr><td>redderDust</td><td style="background-color: #ff7b69">ff7b69</td></tr>
+                    <tr><td>plasticSmoke</td><td style="background-color: #f1e479">f1e479</td></tr>
+                    <tr><td>adminChat</td><td style="background-color: #ff4000">ff4000</td></tr>
+                    <tr><td>neoplasmOutline</td><td style="background-color: #2e191d; color: white">2e191d</td></tr>
+                    <tr><td>neoplasm1</td><td style="background-color: #f98f4a">f98f4a</td></tr>
+                    <tr><td>neoplasm2</td><td style="background-color: #9e172c">9e172c</td></tr>
+                    <tr><td>logicBlocks</td><td style="background-color: #d4816b">d4816b</td></tr>
+                    <tr><td>logicControl</td><td style="background-color: #6bb2b2">6bb2b2</td></tr>
+                    <tr><td>logicOperation</td><td style="background-color: #877bad">877bad</td></tr>
+                    <tr><td>logicIo</td><td style="background-color: #a08a8a">a08a8a</td></tr>
+                    <tr><td>logicUnits</td><td style="background-color: #c7b59d">c7b59d</td></tr>
+                    <tr><td>logicWorld</td><td style="background-color: #6b84d4">6b84d4</td></tr>
+                    <tr><td>berylShot</td><td style="background-color: #b1dd7e">b1dd7e</td></tr>
+                    <tr><td>tungstenShot</td><td style="background-color: #768a9a">768a9a</td></tr>
+                    <tr><td>plasticBurn</td><td style="background-color: #e9ead3">e9ead3</td></tr>
+                    <tr><td>muddy</td><td style="background-color: #432722; color: white">432722</td></tr>
+                    <tr><td>redLight</td><td style="background-color: #feb380">feb380</td></tr>
+                    <tr><td>slagOrange</td><td style="background-color: #ffa166">ffa166</td></tr>
+                    <tr><td>techBlue</td><td style="background-color: #8ca9e8">8ca9e8</td></tr>
+                    <tr><td>vent</td><td style="background-color: #6b4e4e; color: white">6b4e4e</td></tr>
+                    <tr><td>vent2</td><td style="background-color: #3b2a2a; color: white">3b2a2a</td></tr>
+            </tbody>        </table>
     </div>
 </body>
 </html>
