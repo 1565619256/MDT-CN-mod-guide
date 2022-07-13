@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../css.css">
+    <title>Acclerator</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../../index.html">README</a>\<a href="../../attr.html">attr.main</a>\<a href="../../unlockablecontent.html">UnlockableContent</a>\<a href="../pre.html">Block</a>\Acclerator>
+    </div>
+    <div class="article">
+        <h1>Acclerator</h1>
+        <p>extends Block</p>
+
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>launching</td><td>Block</td><td>Blocks.coreNucleus</td><td>对发射需求物品相关</td></tr>
+                <tr><td>capacities</td><td>int[]</td><td>{}</td><td>貌似是用来自动计算容量的</td></tr>
+            </tbody>
+        </table>
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public Accelerator(String name){
+    super(name);
+    update = true;
+    solid = true;
+    hasItems = true;
+    itemCapacity = 8000;
+    configurable = true;
+}
+</pre></div>
+    </div>
+</body>
+</html>
