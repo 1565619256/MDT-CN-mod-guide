@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../css.css">
+    <title>LaunchPad</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../../index.html">README</a>\<a href="../../attr.html">attr.main</a>\<a href="../../unlockablecontent.html">UnlockableContent</a>\<a href="../pre.html">Block</a>\Wall>
+    </div>
+    <div class="article">
+        <h1>Wall</h1>
+        <p>extends Block</p>
+
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>lightningChance</td><td>float</td><td>-1</td><td>放电几率</td></tr>
+                <tr><td>lightningDamage</td><td>float</td><td>20</td><td>放电伤害</td></tr>
+                <tr><td>lightningLength</td><td>int</td><td>17</td><td>放电长度</td></tr>
+                <tr><td>lightningColor</td><td>Color</td><td><a href="../../../constant.html#pal">Pal</a>.surge</td><td>放电颜色</td></tr>
+                <tr><td>lightningSound</td><td>Sound</td><td>Sounds.spark</td><td>放电声音</td></tr>
+                <tr><td>chanceDeflect</td><td>float</td><td>-1</td><td>反弹几率</td></tr>
+                <tr><td>flashHit</td><td>boolean</td><td></td><td>反弹时闪烁</td></tr>
+                <tr><td>flashColor</td><td>Color</td><td>Color.white</td><td>闪烁颜色</td></tr>
+                <tr><td>deflectSound</td><td>Sound</td><td>Sounds.none</td><td>反弹声音</td></tr>
+            </tbody>
+        </table>
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public Wall(String name){
+    super(name);
+    solid = true;
+    destructible = true;
+    group = BlockGroup.walls;
+    buildCostMultiplier = 6f;
+    canOverdrive = false;
+    drawDisabled = false;
+    crushDamageMultiplier = 5f;
+    priority = TargetPriority.wall;
+
+    //it's a wall of course it's supported everywhere
+    envEnabled = Env.any;
+}
+</pre></div>
+    </div>
+</body>
+</html>

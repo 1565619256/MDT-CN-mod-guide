@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../../css.css">
+    <title>BaseTurret</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../../../index.html">README</a>\<a href="../../../attr.html">attr.main</a>\<a href="../../../unlockablecontent.html">UnlockableContent</a>\<a href="../../pre.html">Block</a>\BaseTurret>
+    </div>
+    <div class="article">
+        <h1>BaseTurret</h1>
+        <p>extends Block</p>
+
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>range</td><td>float</td><td>80</td><td>检测范围</td></tr>
+                <tr><td>placeOverlapMargin</td><td>float</td><td><code class="lcode">8 * 7f</code></td><td></td></tr>
+                <tr><td>rotateSpeed</td><td>float</td><td>5</td><td>旋转速度</td></tr>
+                <tr><td>coolEffect</td><td>Effect</td><td>Fx.fuelburn</td><td>冷却特效</td></tr>
+                <tr><td>coolantMultiplier</td><td>float</td><td>5</td><td>每单位冷却液降低热量倍率</td></tr>
+                <tr><td>coolant</td><td style="font-size: xx-small;">@Nullable ConsumeLiquidBase</td><td></td><td>冷却液需求</td></tr>
+            </tbody>
+        </table>
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public BaseTurret(String name){
+    super(name);
+
+    update = true;
+    solid = true;
+    outlineIcon = true;
+    attacks = true;
+    priority = TargetPriority.turret;
+    group = BlockGroup.turrets;
+    flags = EnumSet.of(BlockFlag.turret);
+}
+</pre></div>
+    </div>
+</body>
+</html>
