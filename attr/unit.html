@@ -16,117 +16,166 @@
         <h2>主要属性</h2>
         <table>
             <thead>
-                <tr><th>field</th><th>type</th><th>default</th><th>note</th></tr>
+                <tr><th>field</th><th width="10%">type</th><th width="20%">default</th><th width="60%">note</th></tr>
             </thead>
             <tbody>
-                <tr><td>flying</td><td>boolean</td><td>false</td><td>是否能飞行</td></tr>
-                <tr><td>onTitleScreen</td><td>boolean</td><td>true</td><td>如果<code class="lcode">flying</code>为<code class="lcode">true</code>和该值为<code class="lcode">true</code>则可出现在游戏主界面上</td></tr>
-                <tr><td>constructor</td><td>Prov&lt;? extends Unit&gt;</td><td></td><td>创建一个单位实例</td></tr>
-                <tr><td>defaultController</td><td>Prov&lt;? extends UnitController&gt;</td><td>见note</td><td>若<code class="lcode">flying == true</code>默认为飞行AI<br>反之则为陆地AI</td></tr>
-                <tr><td>speed</td><td>float</td><td>1.10</td><td>单位移速</td></tr>
-                <tr><td>boostMultiplier</td><td>float</td><td>1.0</td><td>若<code class="lcode">canBoost == true</code><br>则<code class="lcode">boostMultiplier * speed</code>为助推<b style="color: red">时</b>的速度</td></tr>
-                <tr><td>canBoost</td><td>boolean</td><td>false</td><td>能否助推, 助推<b style="color: red">时</b>为空军</td></tr>
-                <tr><td>rotateSpeed</td><td>float</td><td>5.0</td><td>单位躯干以上速度</td></tr>
-                <tr><td>baseRotateSpeed</td><td>float</td><td>5.0</td><td>单位躯干以下旋转速度</td></tr>
-                <tr><td>drag</td><td>float</td><td>0.30</td><td>不知道, 实验结果是越大越慢</td></tr>
-                <tr><td>accel</td><td>float</td><td>0.50</td><td>加速度?</td></tr>
-                <tr><td>rippleScale</td><td>float</td><td>1.0</td><td></td></tr>
-                <tr><td>riseSpeed</td><td>float</td><td>0.080</td><td>空军单位上升速度</td></tr>
-                <tr><td>fallSpeed</td><td>float</td><td>0.018</td><td>空军单位下降速度</td></tr>
-                <tr><td>health</td><td>float</td><td>200.0</td><td>单位生命值</td></tr>
+                <tr><td>constructor</td><td style="font-size: xx-small;">Prov&lt;? extends Unit&gt;</td><td></td><td>单位实例</td></tr>
+                <tr><td>health</td><td>float</td><td>200</td><td>单位生命值</td></tr>
+                <tr><td>armor</td><td>float</td><td>0</td><td>单位护甲值</td></tr>
                 <tr><td>range</td><td>float</td><td>-1</td><td></td></tr>
-                <tr><td>miningRange</td><td>float</td><td>70.0</td><td>挖矿距离(貌似5为一格)</td></tr>
-                <tr><td>armor</td><td>float</td><td>0.0</td><td>单位护甲值</td></tr>
-                <tr><td>maxRange</td><td>float</td><td>-1.0</td><td>AI监测最大距离<br>(如爬虫 <img src="../img/crawler.png" alt="crawler" width="30px" height="30px"> 在最大检测范围往最近的敌人奔去)</td></tr>
-                <tr><td>crashDamageMultiplier</td><td>float</td><td>1.0</td><td><b style="color: red">空军单位</b>坠毁后伤害倍率</td></tr>
-                <tr><td>targetAir</td><td>boolean</td><td>true</td><td>瞄准空军</td></tr>
-                <tr><td>targetGround</td><td>boolean</td><td>true</td><td>瞄准陆军</td></tr>
-                <tr><td>faceTarget</td><td>boolean</td><td>true</td><td>面向目标(可以为敌人或移动终点)</td></tr>
-                <tr><td>rotateShooting</td><td>boolean</td><td>true</td><td>边转边射击</td></tr>
-                <tr><td>isCounted</td><td>boolean</td><td>true</td><td></td></tr>
-                <tr><td>lowAltitude</td><td>boolean</td><td>false</td><td>低空飞行, 与图层有关</td></tr>
-                <tr><td>circleTarget</td><td>boolean</td><td>false</td><td>空军在敌人上方盘旋</td></tr>
-                <tr><td>destructibleWreck</td><td>boolean</td><td>true</td><td></td></tr>
-                <tr><td>groundLayer</td><td>float</td><td><a href="../constant.html#layer">Layer</a>.groundUnit</td><td>类似图层, 高于其他时显示在上方<br>(范围: -11~320)</td></tr>
-                <tr><td>payloadCapacity</td><td>float</td><td>8</td><td>单位最大荷载</td></tr>
-                <tr><td>aimDst</td><td>float</td><td>-1.0</td><td></td></tr>
-                <tr><td>buildBeamOffset</td><td>float</td><td>3.80</td><td></td></tr>
-                <tr><td>commandLimit</td><td>int</td><td>8</td><td>单位操控上限</td></tr>
-                <tr><td>commandRadius</td><td>float</td><td>150.0</td><td>控制波范围</td></tr>
-                <tr><td>visualElevation</td><td>float</td><td>-1.0</td><td>影子有关</td></tr>
-                <tr><td>allowLegStep</td><td>boolean</td><td>false</td><td></td></tr>
-                <tr><td>hovering</td><td>boolean</td><td>false</td><td>单位是否不会被地形淹没和获得地面效果</td></tr>
-                <tr><td>omniMovement</td><td>boolean</td><td>true</td><td>修改后基本不受玩家控制了(能附身)</td></tr>
-                <tr><td>showHeal</td><td>boolean</td><td>true</td><td>被治愈时是否显色</td></tr>
-                <tr><td>healColor</td><td>boolean</td><td><a href="../constant.html#pal">Pal</a>.heal</td><td><b style="color: red">被</b>治愈时的颜色</td></tr>
-                <tr><td>fallEffect</td><td>Effect</td><td>Fx.fallSmoke</td><td></td></tr>
-                <tr><td>fallThrusterEffect</td><td>Effect</td><td>Fx.fallSmoke</td><td></td></tr>
-                <tr><td>deathExplosionEffect</td><td>Effect</td><td>Fx.dynamicExplosion</td><td></td></tr>
-                <tr><td>decals</td><td>Seq&lt;UnitDecal&gt;</td><td>new Seq&lt;&gt;</td><td></td></tr>
-                <tr><td>abilities</td><td>Seq&lt;Ability&gt;</td><td>new Seq&lt;&gt;</td><td>单位的特殊能力</td></tr>
-                <tr><td>targetFlag</td><td>BlockFlag</td><td>{null}</td><td></td></tr>
-                <tr><td>playerTargetFlags</td><td>BlockFlag[]</td><td>{BlockFlag.core, null}</td><td></td></tr>
-                <tr><td>mineItems</td><td>Seq&lt;Item&gt;</td><td>Seq.with(Items.copper,<br>Items.lead,<br>Items.titanium,<br>Items.thorium)</td><td>决定AI挖的矿</td></tr>
-                <tr><td>outlines</td><td>boolean</td><td>true</td><td>绘制外框</td></tr>
-                <tr><td>outlineColor</td><td>Color</td><td><a href="../constant.html#pal">Pal</a>.darkerMetal</td><td>外框颜色</td></tr>
-                <tr><td>outlineRadius</td><td>int</td><td>3</td><td>外框粗细</td></tr>
-                <tr><td>legCount</td><td>int</td><td>4</td><td>腿的个数</td></tr>
-                <tr><td>legGroupSize</td><td>int</td><td>2</td><td>貌似和移动间距有关</td></tr>
-                <tr><td>legLength</td><td>float</td><td>10.0</td><td>腿长</td></tr>
-                <tr><td>legSpeed</td><td>float</td><td>0.10</td><td>单位移动速度</td></tr>
-                <tr><td>legTrns</td><td>float</td><td>1.00</td><td>改动后奇怪起来了</td></tr>
-                <tr><td>legBaseOffset</td><td>float</td><td>0.0</td><td>和位置有关</td></tr>
-                <tr><td>legMoveSpace</td><td>float</td><td>1.0</td><td>和移动间距有关</td></tr>
-                <tr><td>legExtension</td><td>float</td><td>0</td><td></td></tr>
-                <tr><td>legPairOffset</td><td>float</td><td>0</td><td></td></tr>
-                <tr><td>legLengthScl</td><td>float</td><td>1.0</td><td></td></tr>
-                <tr><td>kinematicScl</td><td>float</td><td>1.0</td><td></td></tr>
-                <tr><td>maxStretch</td><td>float</td><td>1.750</td><td></td></tr>
-                <tr><td>legSplashDamage</td><td>float</td><td>0.0</td><td>落脚点造成伤害</td></tr>
-                <tr><td>legSplashRange</td><td>float</td><td>5</td><td>落脚点伤害范围</td></tr>
-                <tr><td>flipBackLegs</td><td>boolean</td><td>true</td><td></td></tr>
-                <tr><td>mechSideSway</td><td>float</td><td>0.540</td><td></td></tr>
-                <tr><td>mechFrontSway</td><td>float</td><td>0.10</td><td></td></tr>
-                <tr><td>mechStride</td><td>float</td><td>-1.0</td><td></td></tr>
-                <tr><td>mechStepShake</td><td>float</td><td>-1.0</td><td></td></tr>
-                <tr><td>mechStepParticles</td><td>boolean</td><td>false</td><td></td></tr>
-                <tr><td>mechLegColor</td><td>Color</td><td><a href="../constant.html#pal">Pal</a>.darkMetal</td><td></td></tr>
-                <tr><td>itemCapacity</td><td>int</td><td>-1</td><td>单位物品容量</td></tr>
-                <tr><td>ammoCapacity</td><td>int</td><td>-1</td><td>单位弹药容量(单位弹药选项打开)</td></tr>
-                <tr><td>ammoType</td><td>AmmoType</td><td style="font-size: xx-small">new ItemAmmoType(Items.copper)</td><td>单位使用子弹(单位弹药选项打开)</td></tr>
-                <tr><td>mineTier</td><td>int</td><td>-1</td><td>钻头强度</td></tr>
-                <tr><td>mineSpeed</td><td>float</td><td>1.0</td><td>钻探速度</td></tr>
-                <tr><td>buildSpeed</td><td>float</td><td>-1.0</td><td>建造速度</td></tr>
-                <tr><td>mineSound</td><td>Sound</td><td>Sounds.minebeam</td><td>挖矿的声音</td></tr>
-                <tr><td>mineSoundVolume</td><td>float</td><td>0.60</td><td>挖矿声音大小</td></tr>
-                <tr><td>dpsEstimate</td><td>float</td><td>-1</td><td>预计秒伤(星球受到的伤害,用作敌人时?)</td></tr>
-                <tr><td>clipSize</td><td>float</td><td>-1</td><td></td></tr>
-                <tr><td>canDrown</td><td>boolean</td><td>true</td><td>能被淹没</td></tr>
-                <tr><td>naval</td><td>boolean</td><td>false</td><td>是否为海军</td></tr>
-                <tr><td>drownTimeMultiplier</td><td>float</td><td>1.0</td><td>淹没时间倍率?</td></tr>
-                <tr><td>engineOffset</td><td>float</td><td>5.0</td><td>尾部喷焰偏移(-y)</td></tr>
-                <tr><td>engineSize</td><td>float</td><td>2.50</td><td>尾部喷焰大小</td></tr>
-                <tr><td>engineColor</td><td>Color</td><td>null</td><td>尾部喷焰颜色(外)</td></tr>
-                <tr><td>engineColorInner</td><td>Color</td><td>Color.white</td><td>尾部喷焰颜色(内)</td></tr>
-                <tr><td>strafePenalty</td><td>float</td><td>0.50</td><td></td></tr>
-                <tr><td>hitSize</td><td>float</td><td>6.0</td><td></td></tr>
-                <tr><td>itemOffsetY</td><td>float</td><td>3.0</td><td>物品显示偏移(-y)</td></tr>
-                <tr><td>lightRadius</td><td>float</td><td>-1.0</td><td>灯光范围</td></tr>
-                <tr><td>lightOpacity</td><td>float</td><td>0.60</td><td>灯光外围亮度?</td></tr>
-                <tr><td>lightColor</td><td>Color</td><td><a href="../constant.html#pal">Pal</a>.powerLight</td><td>灯光颜色</td></tr>
-                <tr><td>drawCell</td><td>boolean</td><td>true</td><td>绘制核心</td></tr>
-                <tr><td>drawItems</td><td>boolean</td><td>true</td><td>绘制携带物品</td></tr>
-                <tr><td>drawShields</td><td>boolean</td><td>true</td><td>绘制护盾</td></tr>
-                <tr><td>drawBody</td><td>boolean</td><td>true</td><td>绘制身体</td></tr>
-                <tr><td>trailLength</td><td>int</td><td>3</td><td></td></tr>
-                <tr><td>trailX</td><td>float</td><td>4.0</td><td></td></tr>
-                <tr><td>trailY</td><td>float</td><td>-3.0</td><td></td></tr>
-                <tr><td>trailScl</td><td>float</td><td>1.0</td><td></td></tr>
-                <tr><td>canHeal</td><td>boolean</td><td>false</td><td>能修复方块</td></tr>
-                <tr><td>singleTarget</td><td>boolean</td><td>false</td><td>全部武器瞄准一个目标</td></tr>
-                <tr><td>forceMultiTarget</td><td>boolean</td><td>false</td><td></td></tr>
+                <tr><td>maxRange</td><td>float</td><td>-1</td><td></td></tr>
+                <tr><td>speed</td><td>float</td><td>1.1</td><td>单位移速</td></tr>
+                <tr><td>boostMultiplier</td><td>float</td><td>1</td><td>单位助推移速倍率</td></tr>
+                <tr><td>rotateSpeed</td><td>float</td><td>5</td><td>单位机身在单位时间转动角度大小</td></tr>
+                <tr><td>drag</td><td>float</td><td>0.3</td><td>单位惯性大小</td></tr>
+                <tr><td>accel</td><td>float</td><td>0.5</td><td>单位加速度大小</td></tr>
+                <tr><td>physics</td><td>boolean</td><td>true</td><td>是否有碰撞箱</td></tr>
+                <tr><td>hitSize</td><td>float</td><td>6</td><td>单位正方形碰撞箱边长大小</td></tr>
+                <tr><td>stepShake</td><td>float</td><td>-1</td><td>走动屏幕摇晃强度(LEG/MECH)</td></tr>
+                <tr><td>rippleScale</td><td>float</td><td>1</td><td>地面粒子效果强度</td></tr>
+                <tr><td>riseSpeed</td><td>float</td><td>0.08</td><td>单位助推上空速度</td></tr>
+                <tr><td>fallSpeed</td><td>float</td><td>0.018</td><td>单位无助推下地速度</td></tr>
+                <tr><td>missileAccelTime</td><td>float</td><td>0</td><td>导弹单位加速度到全速耗时</td></tr>
+                <tr><td>mineRange</td><td>float</td><td>70</td><td>单位挖矿范围</td></tr>
+                <tr><td>buildRange</td><td>float</td><td style="font-size: xx-small;">Vars.buildingRange</td><td>单位构造方块范围</td></tr>
+                <tr><td>crashDamageMultiplier</td><td>float</td><td>1</td><td>飞行单位坠落伤害倍率</td></tr>
+                <tr><td>dspEstimate</td><td>float</td><td>-1</td><td>单位秒伤(-1为自动计算)</td></tr>
+                <tr><td>hovering</td><td>boolean</td><td>false</td><td>是否不会被地板效果效应</td></tr>
+                <tr><td>canDrown</td><td>boolean</td><td>true</td><td>陆地单位淹没时间倍率</td></tr>
+                <tr><td>drownTimeMultiplier</td><td>float</td><td>1</td><td>陆地单位淹没时间倍率</td></tr>
+                <tr><td>strafePenalty</td><td>float</td><td>0.5</td><td>向不同方位时移速损失</td></tr>
+                <tr><td>researchCostMultiplier</td><td>float</td><td>50</td><td>单位研究消耗倍率</td></tr>
+                <tr><td>groundLayer</td><td>float</td><td>Layer.groundUnit</td><td>单位所在图层</td></tr>
+                <tr><td>buildSpeed</td><td>float</td><td>-1</td><td>单位建造速度(<0以不可构造方块)</td></tr>
+                <tr><td>rotateToBuilding</td><td>boolean</td><td>true</td><td>是否转向当前构造的方块</td></tr>
+                <tr><td>aimDst</td><td>float</td><td>-1</td><td>单位瞄准最小范围</td></tr>
+                <tr><td>buildBeamOffset</td><td>float</td><td>3.8</td><td>单位构造枪y轴偏移</td></tr>
+                <tr><td>shadowElevation</td><td>float</td><td>-1</td><td></td></tr>
+                <tr><td>shadowElevationScl</td><td>float</td><td>1</td><td></td></tr>
+                <tr><td>engineOffset</td><td>float</td><td>5</td><td>尾喷焰负偏移(y)</td></tr>
+                <tr><td>engineSize</td><td>float</td><td>2.5</td><td>尾喷焰大小</td></tr>
+                <tr><td>engineLayer</td><td>float</td><td>-1</td><td>尾喷焰所在图层</td></tr>
+                <tr><td>itemOffsetY</td><td>float</td><td>3</td><td>单位所有物品负偏移(y)</td></tr>
+                <tr><td>lightRadius</td><td>float</td><td>-1</td><td>单位发光半径(<0以取默认值)</td></tr>
+                <tr><td>lightOpacity</td><td>float</td><td>0.6</td><td>单位发光强度(α通道)</td></tr>
+                <tr><td>fogRadius</td><td>float</td><td>-1</td><td>单位探雾范围(<0以自动计算)</td></tr>
+                <tr><td>waveTrailX</td><td>float</td><td>4</td><td rowspan="2">海军尾拖偏移</td></tr>
+                <tr><td>waveTrailY</td><td>float</td><td>-3</td></tr>
+                <tr><td>trailScl</td><td>float</td><td>1</td><td>尾拖粗细</td></tr>
+                <tr><td>abilities</td><td>Seq&lt;Ability&gt;</td><td>new Seq&lt;&gt;</td><td>单位能力</td></tr>
+                <tr><td>weapons</td><td>Seq&lt;Weapon&gt;</td><td>new Seq&lt;&gt;</td><td>单位武器</td></tr>
+                <tr><td>immunites</td><td style="font-size: xx-small;">ObjectSet<br>&lt;StatusEffect&gt;</td><td>new ObjectSet&lt;&gt;</td><td>单位免疫效果</td></tr>
+                <tr><td>canHeal</td><td>boolean</td><td>false</td><td>单位是否能被治疗</td></tr>
+                <tr><td>healFlash</td><td>boolean</td><td>true</td><td>是否在单位被治疗时闪光</td></tr>
+                <tr><td>healColor</td><td>Color</td><td>Pal.heal</td><td>单位被治疗闪光颜色</td></tr>
+                <tr><td>lightColor</td><td>Color</td><td>Pal.powerLight</td><td>单位发光颜色</td></tr>
                 <tr><td>deathSound</td><td>Sound</td><td>Sounds.bang</td><td>单位死亡音效</td></tr>
-                <tr><td>weapons</td><td>Seq&lt;Weapons&gt;</td><td>new Seq&lt;&gt;()</td><td>单位武器</td></tr>
+                <tr><td>loopSound</td><td>Sound</td><td>Sounds.none</td><td>单位周边音效</td></tr>
+                <tr><td>loopSoundVolume</td><td>float</td><td>0.5</td><td>单位周边音效响度</td></tr>
+                <tr><td>fallEffect</td><td>Effect</td><td>Fx.fallSmoke</td><td>助推单位坠落特效</td></tr>
+                <tr><td>fallEngineEffect</td><td>Effect</td><td>Fx.fallSmoke</td><td>助推单位坠落时发动机特效</td></tr>
+                <tr><td>deathExplosionEffect</td><td>Effect</td><td style="font-size: xx-small;">Fx.dynamicExplosion</td><td>死亡单位爆炸特效</td></tr>
+                <tr><td>parts</td><td>Seq&lt;DrawPart&gt;</td><td style="font-size: xx-small;">new Seq&lt;&gt;(DrawPart.class)</td><td>单位额外绘制部件</td></tr>
+                <tr><td>engines</td><td>Seq&lt;UnitEngine&gt;</td><td >new Seq&lt;&gt;</td><td>助推单位发动机</td></tr>
+                <tr><td>engineColor</td><td>@Nullable Color</td><td>null</td><td>覆盖全部发动机颜色</td></tr>
+                <tr><td>engineColorInner</td><td>Color</td><td>Color.white</td><td>发动机内部颜色</td></tr>
+                <tr><td>trailLength</td><td>int</td><td>0</td><td>海军尾拖长度</td></tr>
+                <tr><td>outlines</td><td>boolean</td><td>true</td><td>是否有外描边</td></tr>
+                <tr><td>outlineRadius</td><td>int</td><td>3</td><td>外描边粗细</td></tr>
+                <tr><td>outlineColor</td><td>color</td><td>Pal.darkerMetal</td><td>外描边颜色</td></tr>
+                <tr><td>itemCapacity</td><td>int</td><td>-1</td><td>单位物品容量(<0以碰撞箱计算)</td></tr>
+                <tr><td>ammoType</td><td>AmmoType</td><td style="font-size: xx-small;">new ItemAmmoType<br>(Items.copper)</td><td>物品使用的弹药</td></tr>
+                <tr><td>ammoCapacity</td><td>int</td><td>-1</td><td>物品弹药容量(<0以武器射速计算)</td></tr>
+                <tr><td>mineWalls</td><td rowspan="2">boolean</td><td rowspan="2">false</td><td>是否能挖墙矿</td></tr>
+                <tr><td>mineFloor</td><td>是否能挖地矿</td></tr>
+                <tr><td>mineHardnessScaling</td><td>boolean</td><td>true</td><td>是否依据矿物硬度调整挖矿效率</td></tr>
+                <tr><td>mineTier</td><td>int</td><td>-1</td><td>单位钻头强度</td></tr>
+                <tr><td>mineSpeed</td><td>float</td><td>1</td><td>单位钻取速度</td></tr>
+                <tr><td>mineSoundVolume</td><td>float</td><td>0.6</td><td>单位挖矿声音响度</td></tr>
+                <tr><td>mineItems</td><td>Seq&lt;Item&gt;</td><td>Seq.with(<br>Items.copper,<br>Items.lead,<br>Items.titanium,<br>Items.thorium)</td><td>单位计划挖掘矿物</td></tr>
+                <tr><td>hidden</td><td>boolean</td><td>false</td><td>是否隐藏单位</td></tr>
+                <tr><td>useUnitCap</td><td>boolean</td><td>true</td><td>是否有单位数量上限</td></tr>
+                <tr><td>flying</td><td>boolean</td><td>false</td><td>是否永远飞行</td></tr>
+                <tr><td>lowAltitude</td><td>boolean</td><td>false</td><td>低空飞行, 图层相关</td></tr>
+                <tr><td>canBoost</td><td>boolean</td><td>false</td><td>是否可助推, 助推时为空军</td></tr>
+                <tr><td>canAttack</td><td>boolean</td><td>true</td><td>单位是否没有武器攻击</td></tr>
+                <tr><td>targetAir</td><td>boolean</td><td>true</td><td>是否<b style="color: red">瞄准</b>空军</td></tr>
+                <tr><td>targetGround</td><td>boolean</td><td>true</td><td>是否瞄准陆军</td></tr>
+                <tr><td>faceTarget</td><td>boolean</td><td>true</td><td>是否尝试面向瞄准的目标</td></tr>
+                <tr><td>circleTarget</td><td>boolean</td><td>false</td><td>飞行单位是否围绕目标</td></tr>
+                <tr><td>singleTarget</td><td>boolean</td><td>false</td><td>全部武器是否只瞄准单个目标</td></tr>
+                <tr><td>forceMultiTarget</td><td>boolean</td><td>false</td><td>是否强制瞄准多个目标</td></tr>
+                <tr><td>aiController</td><td style="font-size: xx-small;">Prov&lt;? extends<br>UnitController&gt;</td><td>见note</td><td>被构造后默认分配的AI(不填以<code class="lcode">flying</code>决定AI)</td></tr>
+                <tr><td>controller</td><td style="font-size: xx-small;">Func&lt;Unit, ? extends UnitController&gt;</td><td>见note</td><td>决定单位用什么AI的算法<br>(不填默认为<code class="lcode">aiController</code>或被指挥AI)</td></tr>
+                <tr><td>logicControllable</td><td>boolean</td><td>true</td><td>是否能被逻辑控制</td></tr>
+                <tr><td>playerControllable</td><td>boolean</td><td>true</td><td>是否能被玩家控制</td></tr>
+                <tr><td>payloadCapacity</td><td>boolean</td><td>true</td><td>单位荷载容量</td></tr>
+                <tr><td>pickupUnit</td><td>boolean</td><td>true</td><td>是否能捡起单位</td></tr>
+                <tr><td>allowedInPayloads</td><td>boolean</td><td>true</td><td>是否能作为荷载被运输</td></tr>
+                <tr><td>vulnerableWithPayloads</td><td>boolean</td><td>false</td><td>是否在单位有荷载时可被攻击<br>(下两项为<code class="lcode">false</code>时)</td></tr>
+                <tr><td>targetable</td><td>boolean</td><td>true</td><td>是否能被瞄准</td></tr>
+                <tr><td>hittable</td><td>boolean</td><td>true</td><td>是否能被射击</td></tr>
+                <tr><td>killable</td><td>boolean</td><td>true</td><td>是否能被杀死</td></tr>
+                <tr><td>omniMovement</td><td>boolean</td><td>true</td><td>是否能全方位移动<br>(而非面朝方向)</td></tr>
+                <tr><td>rotateMoveFirst</td><td>boolean</td><td>false</td><td>是否先转到目标方位再移动</td></tr>
+                <tr><td>drawBuildBeam</td><td>boolean</td><td>true</td><td>是否绘制建造枪</td></tr>
+                <tr><td>drawCell</td><td>boolean</td><td>true</td><td>是否绘制队伍指示器</td></tr>
+                <tr><td>drawItems</td><td>boolean</td><td>true</td><td>是否绘制携带物品</td></tr>
+                <tr><td>drawShields</td><td>boolean</td><td>true</td><td>是否绘制单位护盾</td></tr>
+                <tr><td>drawBody</td><td>boolean</td><td>true</td><td>是否绘制单位身体</td></tr>
+
+                <tr><td colspan="4" align="center" style="font-size: xx-large;">LEG 腿型单位</td></tr>
+                <tr><td>allowLegStep</td><td>boolean</td><td>false</td><td>是否允许为腿型单位</td></tr>
+                <tr><td>legPhysicsLayer</td><td>boolean</td><td>true</td><td></td></tr>
+                <tr><td>legCount</td><td>int</td><td>4</td><td>腿的数量</td></tr>
+                <tr><td>legGroupSize</td><td>int</td><td>2</td><td></td></tr>
+                <tr><td>legLength</td><td>float</td><td>10</td><td>腿的长度</td></tr>
+                <tr><td>legSpeed</td><td>float</td><td>0.1</td><td>腿的移速</td></tr>
+                <tr><td>legForwardScl</td><td>float</td><td>1</td><td></td></tr>
+                <tr><td>legBaseOffset</td><td>float</td><td>0</td><td>大腿向单位中心远离半径</td></tr>
+                <tr><td>legMoveSpace</td><td>float</td><td>1</td><td>脚落脚距离倍率(一直走动前提)</td></tr>
+                <tr><td>legExtension</td><td>float</td><td>0</td><td>小腿纵向坐标偏移量(多用于无关节单位)</td></tr>
+                <tr><td>legPairOffset</td><td>float</td><td>0</td><td>各腿移动时间间隔(或者不同步程度)</td></tr>
+                <tr><td>legLengthScl</td><td>float</td><td>1</td><td>每次移动脚尝试向单位中心远离倍率</td></tr>
+                <tr><td>legStraightLength</td><td>float</td><td>1</td><td></td></tr>
+                <tr><td>legMaxLength</td><td>float</td><td>1.75</td><td></td></tr>
+                <tr><td>legMinLength</td><td>float</td><td>0</td><td></td></tr>
+                <tr><td>legSplashRange</td><td>float</td><td>5</td><td>落脚点溅射范围</td></tr>
+                <tr><td>legSplashDamage</td><td>float</td><td>0</td><td>溅射伤害</td></tr>
+                <tr><td>baseLegStraightness</td><td>float</td><td>0</td><td></td></tr>
+                <tr><td>legStraightness</td><td>float</td><td>0</td><td></td></tr>
+                <tr><td>lockLegBase</td><td>boolean</td><td>false</td><td></td></tr>
+                <tr><td>legContinuousMove</td><td>boolean</td><td></td><td></td></tr>
+                <tr><td>flipBackLegs</td><td>boolean</td><td>true</td><td></td></tr>
+                <tr><td>flipLegSide</td><td>boolean</td><td>false</td><td></td></tr>
+                <tr><td colspan="4" align="center" style="font-size: xx-large;">MECH 机甲单位</td></tr>
+                <tr><td>baseRotateSpeed</td><td>float</td><td>5</td><td>机座在单位时间转动角度大小</td></tr>
+                <tr><td>mechLandShake</td><td>float</td><td>0</td><td></td></tr>
+                <tr><td>mechSideSway</td><td>float</td><td>0.54</td><td>机甲走动左右摇晃力度</td></tr>
+                <tr><td>mechFrontSway</td><td>float</td><td>0.54</td><td>机甲走动前后摇晃力度</td></tr>
+                <tr><td>mechStride</td><td>float</td><td>-1</td><td></td></tr>
+                <tr><td>mechStepParticles</td><td>boolean</td><td>false</td><td>是否有走路粒子特效</td></tr>
+                <tr><td>mechLegColor</td><td>color</td><td>Pal.darkMetal</td><td></td></tr>
+
+                <tr><td colspan="4" align="center" style="font-size: xx-large;">TANK 坦克单位</td></tr>
+                <tr><td>treadFrame</td><td>float</td><td>18</td><td></td></tr>
+                <tr><td>treadPullOffset</td><td>float</td><td>0</td><td></td></tr>
+
+                <tr><td colspan="4" align="center" style="font-size: xx-large;">MISSILE 导弹单位</td></tr>
+                <tr><td>lifetime</td><td>float</td><td>60 * 5</td><td>存活时间</td></tr>
+                <tr><td>homingDelay</td><td>float</td><td>10</td><td>追踪开启时间</td></tr>
+
+                <tr><td colspan="4" align="center" style="font-size: xx-large;">SEGMENTED 分节单位</td></tr>
+                <tr><td>segments</td><td>int</td><td>0</td><td>分节数量</td></tr>
+                <tr><td>segmentMag</td><td>float</td><td>2</td><td></td></tr>
+                <tr><td>segmentScl</td><td>float</td><td>4</td><td></td></tr>
+                <tr><td>segmentPhase</td><td>float</td><td>5</td><td></td></tr>
+                <tr><td>segmentRotSpeed</td><td>float</td><td>1</td><td>各分节转速</td></tr>
+                <tr><td>segmentMaxRot</td><td>float</td><td>30</td><td>各分节最大差异角度</td></tr>
+                <tr><td>crawlSlowdownFrac</td><td>float</td><td>0.55</td><td></td></tr>
+                <tr><td>crawlSlowdown</td><td>float</td><td>0.5</td><td></td></tr>
+                <tr><td>crushDamage</td><td>float</td><td>0</td><td>在单位本下方受到的帧伤</td></tr>
+
             </tbody>
         </table>
 

@@ -12,11 +12,11 @@
     </div>
     <div class="article">
         <h1>MDT模组制作帮助文档</h1>
-        <h2 style="text-align: right">----作者: <a href="https://space.bilibili.com/472147718">NullPointerErr</a></h2>
-        <p>教程版本: 1.3</p>
-        <p>最新版本: <a href="https://github.com/Anuken/Mindustry/releases/tag/v135.2">135.2</a></p>
+        <h2 style="text-align: right">作者: <a href="https://space.bilibili.com/472147718">NullPointerErr</a></h2>
+        <p>教程版本: 1.4</p>
+        <p>最新版本: <a href="https://github.com/Anuken/Mindustry/releases/tag/v138" target="blank">138</a></p>
         <p style="color: red;">注意: 在阅读本教程前默认你已能掌握json/js等编程语言;  若无特别强调, 本文档里的"时间"均是指帧数(1/60秒)</p>
-        <h2>特殊属性json写法(WIP)</h2>
+        <h2><a>特殊属性json写法(WIP)<span style="font-size: xx-small;">(ContentParser)</span></a></h2>
         <h2><a href="./js/js.html">高阶模组(WIP)</a></h2>
         <h2><a href="./attr/attr.html">所有属性(WIP)</a></h2>
         <h2><a href="./constant.html">常量</a></h2>
@@ -43,7 +43,7 @@ project
 
         <!-- 解释说明 -->
         <ul>
-            <li><code class="lcode">mod.json/mod.hjson</code >模组<b style="color: red">必须</b>要有的文件</li>
+            <li><code class="lcode">mod.json/mod.hjson</code>模组<b style="color: red">必须</b>要有的文件</li>
             <li><code class="lcode">content/*</code>存放json模组的文件夹, 里面有更详细的分类</li>
                 <ul>
                     <li><code class="lcode">items</code>存放物品的文件夹, 内部可根据需求再分类</li>
@@ -82,10 +82,10 @@ project
 
 
         <h3>翻译文件</h3>
-        <p>翻译文件是可选的, 其用处是给你的模组内容转换成不同语言. 翻译文件是一个纯文本文件且存放在<code class="lcode">bundles/*</code>目录下, 其语法如下</p>
-        <ul>
-            <li><code class="lcode">&lt;内容类型&gt;.&lt;模组名&gt;-&lt;内容名&gt; = &lt;文本&gt;</code></li>
-        </ul>
+        <p>翻译文件是可选的, 其用处是给你的模组内容转换成不同语言, 以便世界各国的人了解你的模组. 翻译文件是后缀为<code class="lcode">.properties</code>文件且存放在<code class="lcode">bundles/*</code>目录下, 其主要语法为<code class="lcode">&lt;内容类型&gt;.&lt;模组名(上方表格name)&gt;-&lt;内容名&gt; = &lt;文本&gt;</code></p>
+        <p>内容类型有<code class="lcode">item block liquid status unit weather</code></p>
+        <p>文件干名称可以有如下的后缀, 将内容翻译成不同的语言(开头为bundle_)<code class="lcode">en pl ja id_ID et sr fr lt pt_BR pt_PT th nl nl_BE eu ro it fi uk_UA zh_TW zh_CN ko tr es cs vi hu be ru bg de da sv</code></p>
+        <p>他们分别代表<code class="lcode">英文 波兰文 日文 印度尼西亚文 爱沙尼亚文 塞尔维亚文 法语 立陶宛文 葡萄牙文(巴西) 葡萄牙文(葡萄牙) 泰文 荷兰文 荷兰文(比利时) 巴士克文 罗马尼亚文 意大利文 芬兰文 乌克兰文 繁体中文 简体中文 朝鲜文 土耳其文 西班牙语 捷克文 越南文 匈牙利语 比利时文 俄语 保加利亚文 德文 丹麦文 瑞典文</code></p>
     </div>
 </body>
 </html>
