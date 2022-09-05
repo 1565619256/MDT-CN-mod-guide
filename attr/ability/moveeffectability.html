@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../css.css">
+    <title>LiquidExplodeAbility</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../index.html">README</a>\<a href="../attr.html">attr.main</a>\<a href="./ability.html">Ability</a>\MoveEffectAbility>
+    </div>
+    <div class="article">
+        <h1>MoveEffectAbility</h1>
+        <p>extends <a href="./ability.html" title="Ability">单位能力</a></p>
+        <h2>主要属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>minVelocity</td><td>float</td><td>0.08</td><td></td></tr>
+                <tr><td>interval</td><td>float</td><td>3</td><td></td></tr>
+                <tr><td>x</td><td>float</td><td></td><td></td></tr>
+                <tr><td>y</td><td>float</td><td></td><td></td></tr>
+                <tr><td>rotation</td><td>float</td><td></td><td></td></tr>
+                <tr><td>rotateEffect</td><td>boolean</td><td>false</td><td></td></tr>
+                <tr><td>effectParam</td><td>float</td><td>3</td><td></td></tr>
+                <tr><td>teamColor</td><td>boolean</td><td>false</td><td></td></tr>
+                <tr><td>parentizeEffects</td><td>boolean</td><td></td><td></td></tr>
+                <tr><td>color</td><td>Color</td><td style="font-size: xx-small;">Color.white</td><td></td></tr>
+                <tr><td>effect</td><td>Effect</td><td style="font-size: xx-small;">Fx.missileTrail</td><td></td></tr>
+            </tbody>
+        </table>
+
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public MoveEffectAbility(float x, float y, Color color, Effect effect, float interval){
+    this.x = x;
+    this.y = y;
+    this.color = color;
+    this.effect = effect;
+    this.interval = interval;
+    display = false;
+}
+</pre></div>
+    </div>
+</body>
+</html>
