@@ -62,7 +62,7 @@
                 <tr><td>waveTrailX</td><td>float</td><td>4</td><td rowspan="2">海军尾拖偏移</td></tr>
                 <tr><td>waveTrailY</td><td>float</td><td>-3</td></tr>
                 <tr><td>trailScl</td><td>float</td><td>1</td><td>尾拖粗细</td></tr>
-                <tr><td>abilities</td><td>Seq&lt;Ability&gt;</td><td>new Seq&lt;&gt;</td><td>单位能力</td></tr>
+                <tr><td>abilities</td><td>Seq&lt;<a href="./ability/ability.html">Ability</a>&gt;</td><td>new Seq&lt;&gt;</td><td>单位技能</td></tr>
                 <tr><td>weapons</td><td>Seq&lt;Weapon&gt;</td><td>new Seq&lt;&gt;</td><td>单位武器</td></tr>
                 <tr><td>immunites</td><td style="font-size: xx-small;">ObjectSet<br>&lt;StatusEffect&gt;</td><td>new ObjectSet&lt;&gt;</td><td>单位免疫效果</td></tr>
                 <tr><td>canHeal</td><td>boolean</td><td>false</td><td>单位是否能被治疗</td></tr>
@@ -107,6 +107,8 @@
                 <tr><td>forceMultiTarget</td><td>boolean</td><td>false</td><td>是否强制瞄准多个目标</td></tr>
                 <tr><td>aiController</td><td style="font-size: xx-small;">Prov&lt;? extends<br>UnitController&gt;</td><td>见note</td><td>被构造后默认分配的AI(不填以<code class="lcode">flying</code>决定AI)</td></tr>
                 <tr><td>controller</td><td style="font-size: xx-small;">Func&lt;Unit, ? extends UnitController&gt;</td><td>见note</td><td>决定单位用什么AI的算法<br>(不填默认为<code class="lcode">aiController</code>或被指挥AI)</td></tr>
+                <tr><td>commands</td><td>UnitCommand[]</td><td>{}</td><td>单位指令</td></tr>
+                <tr><td>defaultCommand</td><td>@Nullable UnitCommand</td><td></td><td>单位默认指令</td></tr>
                 <tr><td>logicControllable</td><td>boolean</td><td>true</td><td>是否能被逻辑控制</td></tr>
                 <tr><td>playerControllable</td><td>boolean</td><td>true</td><td>是否能被玩家控制</td></tr>
                 <tr><td>payloadCapacity</td><td>boolean</td><td>true</td><td>单位荷载容量</td></tr>
