@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../../css.css">
+    <title>TractorBeamTurret</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../../../index.html">README</a>\<a href="../../../attr.html">attr.main</a>\<a href="../../../unlockablecontent.html">UnlockableContent</a>\<a href="../../pre.html">Block</a>\<a href="./baseturret.html">BaseTurret</a>\TractorBeamTurret>
+    </div>
+    <div class="article">
+        <h1>TractorBeamTurret</h1>
+        <p>extends <a href="./baseturret.html">BaseTurret</a></p>
+
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>targetAir</td><td>boolean</td><td>true</td><td>瞄准空军</td></tr>
+                <tr><td>targetGround</td><td>boolean</td><td>false</td><td>瞄准陆军</td></tr>
+                <tr><td>shootCone</td><td>float</td><td>6</td><td>允许射击最大差异角度</td></tr>
+                <tr><td>shootLength</td><td>float</td><td>5</td><td>与特效相关</td></tr>
+                <tr><td>laserWidth</td><td>float</td><td>0.6</td><td>激光粗细(特效)</td></tr>
+                <tr><td>force</td><td>float</td><td>0.3</td><td>拖拽力度</td></tr>
+                <tr><td>scaledForce</td><td>float</td><td>0</td><td></td></tr>
+                <tr><td>damage</td><td>float</td><td>0</td><td>每帧伤害</td></tr>
+                <tr><td>laserColor</td><td>Color</td><td>Color.white</td><td>光束颜色</td></tr>
+                <tr><td>status</td><td>StatusEffect</td><td style="font-size: xx-small;">StatusEffect.none</td><td>被击中获得效果</td></tr>
+                <tr><td>statusDuration</td><td>float</td><td>300</td><td>效果持续时间</td></tr>
+                <tr><td>shootSound</td><td>Sound</td><td style="font-size: xx-small;">Sounds.tractorbeam</td><td>射击音效</td></tr>
+                <tr><td>shootSoundVolume</td><td>float</td><td>0.9</td><td>射击音效响度</td></tr>
+            </tbody>
+        </table>
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public TractorBeamTurret(String name){
+    super(name);
+
+    rotateSpeed = 10f;
+    coolantMultiplier = 1f;
+    envEnabled |= Env.space;
+}
+</pre></div>
+    </div>
+</body>
+</html>

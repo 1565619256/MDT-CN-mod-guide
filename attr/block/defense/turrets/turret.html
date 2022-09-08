@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../../css.css">
+    <title>Turret</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../../../index.html">README</a>\<a href="../../../attr.html">attr.main</a>\<a href="../../../unlockablecontent.html">UnlockableContent</a>\<a href="../../pre.html">Block</a>\<a href="./baseturret.html">BaseTurret</a>\<a href="./reloadturret.html">ReloadTurret</a>\Turret>
+    </div>
+    <div class="article">
+        <h1>Turret</h1>
+        <p>extends <a href="./reloadturret.html">ReloadTurret</a></p>
+
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>maxAmmo</td><td>int</td><td>30</td><td>子弹容量</td></tr>
+                <tr><td>ammoPerShot</td><td>int</td><td>1</td><td>单次射击子弹次数</td></tr>
+                <tr><td>consumeAmmoOnce</td><td>boolean</td><td>true</td><td>每次射击是否只消耗一次弹药</td></tr>
+                <tr><td>heatRequirement</td><td>float</td><td>-1</td><td>射击所需最低热量</td></tr>
+                <tr><td>maxHeatEfficiency</td><td>float</td><td>3</td><td>热量最大效率</td></tr>
+                <tr><td>inaccuracy</td><td>float</td><td>0</td><td>射击误差度</td></tr>
+                <tr><td>velocityRnd</td><td>float</td><td>0</td><td></td></tr>
+                <tr><td>shootCone</td><td>float</td><td>8</td><td>允许射击最大差异角度</td></tr>
+                <tr><td>shootX</td><td rowspan="2">float</td><td>0</td><td rowspan="2">炮塔射击点</td></tr>
+                <tr><td>shootY</td><td>-∞</td></tr>
+                <tr><td>xRand</td><td>float</td><td>0</td><td></td></tr>
+                <tr><td>minRange</td><td>float</td><td>0</td><td>限制最小检测范围(仅对<a href="../../../bullet/artillerybullettype.html">火炮子弹</a>生效)</td></tr>
+                <tr><td>minWarmup</td><td>float</td><td>0</td><td>射击所需最低预热</td></tr>
+                <tr><td>accurateDelay</td><td>boolean</td><td>true</td><td>是否根据充能时间预瞄单位</td></tr>
+                <tr><td>moveWhileCharging</td><td>boolean</td><td>true</td><td>充能时能否转动</td></tr>
+                <tr><td>warmupMaintainTime</td><td>float</td><td>0</td><td>不射击时预热保留时长</td></tr>
+                <tr><td>shoot</td><td>ShootPattern</td><td style="font-size: xx-small;">new<br>ShootPattern()</td><td>子弹排列形式(?</td></tr>
+                <tr><td>targetAir</td><td>boolean</td><td>true</td><td>是否瞄准空中单位</td></tr>
+                <tr><td>targetGround</td><td>boolean</td><td>true</td><td>是否瞄准陆地单位</td></tr>
+                <tr><td>targetHealing</td><td>boolean</td><td>false</td><td>是否瞄准友方方块以治疗他们</td></tr>
+                <tr><td>playerControllable</td><td>boolean</td><td>true</td><td>是否能被附身</td></tr>
+                <tr><td>displayAmmoMultiplier</td><td>boolean</td><td>true</td><td>是否能被附身</td></tr>
+                <tr><td>unitSort</td><td>Sortf</td><td style="font-size: xx-small;"><a href="../../../../constant.html#unitsorts">UnitSorts</a>.closest</td><td>决定瞄准哪个单位的算法</td></tr>
+                <tr><td>unitFilter</td><td>Boolf&lt;Unit&gt;</td><td><code class="lcode">u -> true</code></td><td>设置可瞄准的单位算法</td></tr>
+                <tr><td>buildingFilter</td><td>Boolf&lt;Building&gt;</td><td><code class="lcode" >b -> !b.block.underBullets</code></td><td>设置可瞄准的建筑的算法</td></tr>
+                <tr><td>heatColor</td><td>Color</td><td>Pal.turretHeat</td><td><code class="lcode">-heat</code>贴图过热颜色</td></tr>
+                <tr><td>shootEffect</td><td style="font-size: xx-small;">@Nullable Effect</td><td>Pal.turretHeat</td><td></td></tr>
+                <tr><td>smokeEffect</td><td style="font-size: xx-small;">@Nullable Effect</td><td></td><td>冒烟特效</td></tr>
+                <tr><td>ammoUseEffect</td><td>Effect</td><td>Fx.none</td><td></td></tr>
+                <tr><td>shootSound</td><td>Sound</td><td>Sounds.shoot</td><td>炮台射击音效</td></tr>
+                <tr><td>chargeSound</td><td>Sound</td><td>Sounds.none</td><td>炮台充能音效<br><code class="lcode">shoot.firstShotDelay > 0</code>时</td></tr>
+                <tr><td>soundPitchMin</td><td rowspan="2">float</td><td>0.9</td><td rowspan="2">射击声音响度范围</td></tr>
+                <tr><td>soundPitchMin</td><td>1.1</td></tr>
+                <tr><td>ammoEjectBack</td><td>float</td><td>1</td><td>弹药推出特效偏移(-y)</td></tr>
+                <tr><td>shootWarmupSpeed</td><td>float</td><td>0.1</td><td>过渡到最大效率速度</td></tr>
+                <tr><td>linearWarmup</td><td>boolean</td><td>false</td><td>是否线性过渡到最大效率</td></tr>
+                <tr><td>recoil</td><td>float</td><td>1</td><td>后坐力<b style="color: red">特效</b>夸张度(无实际影响)</td></tr>
+                <tr><td>recoilTime</td><td>float</td><td>-1</td><td>恢复正常位置耗时</td></tr>
+                <tr><td>recoilPow</td><td>float</td><td>1.8</td><td>后坐力视觉强度</td></tr>
+                <tr><td>cooldownTime</td><td>float</td><td>20</td><td><code class="lcode">-heat</code>贴图恢复时间</td></tr>
+                <tr><td>elevation</td><td>float</td><td>-1</td><td></td></tr>
+                <tr><td>shake</td><td>float</td><td>0</td><td>单次射击屏幕摇晃强度</td></tr>
+                <tr><td>drawer</td><td>DrawBlock</td><td style="font-size: xx-small;">new DrawTurret()</td><td></td></tr>
+            </tbody>
+        </table>
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public Turret(String name){
+    super(name);
+    liquidCapacity = 20f;
+    quickRotate = false;
+    outlinedIcon = 1;
+}
+</pre></div>
+    </div>
+</body>
+</html>

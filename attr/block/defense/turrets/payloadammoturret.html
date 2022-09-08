@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../../css.css">
+    <title>PayLoadAmmoTurret</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../../../index.html">README</a>\<a href="../../../attr.html">attr.main</a>\<a href="../../../unlockablecontent.html">UnlockableContent</a>\<a href="../../pre.html">Block</a>\<a href="./baseturret.html">BaseTurret</a>\<a href="./reloadturret.html">ReloadTurret</a>\<a href="./turret.html">Turret</a>\PayLoadAmmoTurret>
+    </div>
+    <div class="article">
+        <h1>PayLoadAmmoTurret</h1>
+        <p>extends <a href="./turret.html">Turret</a></p>
+
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>ammoTypes</td><td style="font-size: xx-small;">ObjectMap&lt;UnlockableContent, BulletType&gt;</td><td style="font-size: xx-small;">new ObjectMap&lt;&gt;()</td><td>使用的弹药和射击子弹</td></tr>
+            </tbody>
+        </table>
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public PayloadAmmoTurret(String name){
+    super(name);
+
+    maxAmmo = 3;
+    acceptsPayload = true;
+}
+</pre></div>
+    </div>
+</body>
+</html>

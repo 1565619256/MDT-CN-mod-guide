@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../../css.css">
+    <title>PointDefenseTurret</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../../../index.html">README</a>\<a href="../../../attr.html">attr.main</a>\<a href="../../../unlockablecontent.html">UnlockableContent</a>\<a href="../../pre.html">Block</a>\<a href="./baseturret.html">BaseTurret</a>\<a href="./reloadturret.html">ReloadTurret</a>\PointDefenseTurret>
+    </div>
+    <div class="article">
+        <h1>PointDefenseTurret</h1>
+        <p>extends <a href="./reloadturret.html">ReloadTurret</a></p>
+
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>retargetTime</td><td>float</td><td>5</td><td></td></tr>
+                <tr><td>color</td><td>Color</td><td>Color.white</td><td>光束颜色</td></tr>
+                <tr><td>beamEffect</td><td>Effect</td><td>Fx.pointBeam</td>光束特效<td></td></tr>
+                <tr><td>hitEffect</td><td>Effect</td><td>Fx.pointHit</td><td>击中特效</td></tr>
+                <tr><td>shootEffect</td><td>Effect</td><td>Fx.pointHit</td><td>射击特效</td></tr>
+                <tr><td>shootSound</td><td>Sounds</td><td>Sounds.lasershoot</td><td>射击音效</td></tr>
+                <tr><td>shootCone</td><td>float</td><td>5</td><td>允许射击最大差异角度</td></tr>
+                <tr><td>bulletDamage</td><td>float</td><td>10</td><td>被射击子弹伤害削减</td></tr>
+                <tr><td>shootLength</td><td>float</td><td>3</td><td>貌似和特效和音效有关</td></tr>
+            </tbody>
+        </table>
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public PointDefenseTurret(String name){
+    super(name);
+
+    rotateSpeed = 20f;
+    reload = 30f;
+
+    coolantMultiplier = 2f;
+}
+</pre></div>
+    </div>
+</body>
+</html>

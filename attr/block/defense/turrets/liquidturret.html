@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../../../../icon/ic_launcher.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../../css.css">
+    <title>LiquidTurret</title>
+</head>
+<body>
+    <div>
+        .\<a href="../../../../index.html">README</a>\<a href="../../../attr.html">attr.main</a>\<a href="../../../unlockablecontent.html">UnlockableContent</a>\<a href="../../pre.html">Block</a>\<a href="./baseturret.html">BaseTurret</a>\<a href="./reloadturret.html">ReloadTurret</a>\<a href="./turret.html">Turret</a>\LiquidTurret>
+    </div>
+    <div class="article">
+        <h1>LiquidTurret</h1>
+        <p>extends <a href="./turret.html">Turret</a></p>
+
+        <h2>全部属性</h2>
+        <table>
+            <thead><tr><th>field</th><th>type</th><th>default</th><th>note</th></tr></thead>
+            <tbody>
+                <tr><td>ammoTypes</td><td style="font-size: xx-small;">ObjectMap&lt;Liquid, BulletType&gt;</td><td style="font-size: xx-small;">new ObjectMap&lt;&gt;()</td><td>使用的弹药和射击子弹</td></tr>
+                <tr><td>extinguish</td><td>boolean</td><td>true</td><td>是否可以扑灭火焰(弹药有需求)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>构造方法</h2>
+        <div class="code"><pre>
+public LiquidTurret(String name){
+    super(name);
+    hasLiquids = true;
+    loopSound = Sounds.spray;
+    shootSound = Sounds.none;
+    smokeEffect = Fx.none;
+    shootEffect = Fx.none;
+}
+</pre></div>
+    </div>
+</body>
+</html>
